@@ -1,0 +1,21 @@
+{
+  "name": "photography",
+  "version": "1.0.0",
+  "description": "My photography site",
+  "main": "app.js",
+  "author": "Bogi Aleksandrov",
+  "dependencies": {
+    "express": "^4.13.3"
+  },
+  "scripts": {
+    "start": "node app.js"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jscs": "^4.0.0",
+    "gulp-jshint": "^2.0.4",
+    "jshint": "^2.9.4",
+    "jshint-stylish": "^2.2.1",
+    "wiredep": "^4.0.0"
+  }
+}
