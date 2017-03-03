@@ -1,29 +1,21 @@
 'use strict';
 
 var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
+var nodeman = require('gulp-nodemon');
 
-var jsFiles = ['*.js', 'src/**/*.js'];
+var jsFiles = ['*.js', 'src/**/*.html', 'src/**/*.ejs', 'public/css/*.css', 'public/js/*.js'];
 
-
-gulp.task('style', function () {
-    return gulp.src(jsFiles)
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish', {
-            verbose: true
-        }))
-        .pipe(jscs());
-});
-
-gulp.task('inject', function () {
-    var wiredep = require('wiredep').stream;
-
+gulp.task('serve', function () {
     var options = {
-        bowerJson: require('./bower.json'),
-        directory: './public/lib'
+        script: 'app.js',
+        delayTime: 1,
+        env: {
+            'PORT': 5000
+        },
+        watch: jsFiles
     };
-    return gulp.src('./src/views/*.html')
-        .pipe(wiredep(options))
-        .pipe(gulp.dest('src/views'));
+
+    return nodeman(options).on('restart', function (ev) {
+        console.log('restarting');
+    });
 });

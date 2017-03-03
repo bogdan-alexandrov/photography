@@ -5,7 +5,9 @@
   "main": "app.js",
   "author": "Bogi Aleksandrov",
   "dependencies": {
-    "express": "^4.13.3"
+    "ejs": "^2.5.6",
+    "express": "^4.13.3",
+    "mongodb": "^2.2.24"
   },
   "scripts": {
     "start": "node app.js"
@@ -14,6 +16,7 @@
     "gulp": "^3.9.1",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
+    "gulp-nodemon": "^2.2.1",
     "jshint": "^2.9.4",
     "jshint-stylish": "^2.2.1",
     "wiredep": "^4.0.0"
