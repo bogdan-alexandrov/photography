@@ -6,20 +6,24 @@ var albums = [
     {
         title: 'Paris',
         subtitle: 'Most beautiful city',
-        name: 'paris'
-    },    {
+        name: 'paris',
+        image: 'DSC_8478.jpg'
+    }, {
         title: 'Paris B & W',
         subtitle: 'Black and white version',
-        name: 'paris-bnw'
-    },    {
+        name: 'paris-bnw',
+        image: 'DSC_7315.jpg'
+
+    }, {
         title: 'Animals',
         subtitle: 'Living creatures',
-        name: 'animals'
+        name: 'animals',
+        image: 'DSC_8286.jpg'
     }
 ];
 
 var router = function (nav) {
-    adminRouter.route('/addAlbum')
+    adminRouter.route('/initAlbums')
         .get(function (req, res) {
             var url =
                 'mongodb://localhost:27017/photography';
