@@ -51,23 +51,25 @@
         <div class="mobile-menu">
             <i class="fa fa-times fa-2x"></i>
         </div>
-        <ul class="mobile-menu-content">
+        <nav>
+            <ul class="mobile-menu-content">
 
-            <% for (var i = 0; i < nav.length; i++) { %>
-            <li class="mobile-menu-item">
-                <% if(nav[i].subItems != undefined) { %>
-                <a class="dropdown" href="#%>"><%= nav[i].title %></a>
-                <ul class="mobile-submenu">
-                    <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
-                    <li><a href="<%= nav[i].subItems[j].link %>"><%= nav[i].subItems[j].title %></a></li>
+                <% for (var i = 0; i < nav.length; i++) { %>
+                <li class="mobile-menu-item">
+                    <% if(nav[i].subItems != undefined) { %>
+                    <a class="dropdown" href="#%>"><%= nav[i].title %></a>
+                    <ul class="mobile-submenu">
+                        <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
+                        <li><a href="<%= nav[i].subItems[j].link %>"><%= nav[i].subItems[j].title %></a></li>
+                        <% } %>
+                    </ul>
+                    <% } else { %>
+                    <a class="dropdown" href="<%= nav[i].link %>"><%= nav[i].title %></a>
                     <% } %>
-                </ul>
-                <% } else { %>
-                <a href="<%= nav[i].link %>"><%= nav[i].title %></a>
+                </li>
                 <% } %>
-            </li>
-            <% } %>
-        </ul>
+            </ul>
+        </nav>
     </div>
     <!-- /Mobile Menu -->
 

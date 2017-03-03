@@ -5,29 +5,7 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 5000;
 
-var nav = [{
-    link: '/',
-    title: 'Home'
-}, {
-    link: '/albums',
-    title: 'Albums',
-    subItems: [{
-        link: '/albums/1',
-        title: 'albums - 1'
-    }, {
-        link: '/albums/2',
-        title: 'albums - 2'
-    }, {
-        link: '/albums/3',
-        title: 'albums - 3'
-    }]
-}, {
-    link: '/about',
-    title: 'About'
-}, {
-    link: '/contact',
-    title: 'Contact'
-}];
+var nav = require('./src/services/navigation.js')();
 
 var albumsRouter = require('./src/routes/albumRoutes.js')(nav);
 var adminRouter = require('./src/routes/adminRoutes.js')(nav);

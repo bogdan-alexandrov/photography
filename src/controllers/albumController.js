@@ -8,35 +8,21 @@ var albumController = function (albumService, nav) {
     };
 
     var getIndex = function (req, res) {
-        var url = 'mongodb://localhost:27017/photography';
-
-        mongodb.connect(url, function (err, db) {
-            var collection = db.collection('albums');
-            collection.find({}).toArray(
-                function (err, results) {
-                    res.render('albums', {
-                        nav: nav,
-                        albums: results
-                    });
-                }
-            );
+        albumService.getAll(function (results) {
+            res.render('albums', {
+                nav: nav,
+                albums: results
+            });
         });
     };
 
     var getByName = function (req, res) {
-        var url = 'mongodb://localhost:27017/photography';
-
-        mongodb.connect(url, function (err, db) {
-            var collection = db.collection('albums');
-            collection.findOne({name: req.params.name},
-                function (err, results) {
-                    res.render('album', {
-                        nav: nav,
-                        album: results
-                    });
-                }
-            );
-        });
+        albumService.getByName(req.params.name, function (result) {
+            res.render('album', {
+                nav: nav,
+                album: result
+            });
+        })
     };
 
     return {

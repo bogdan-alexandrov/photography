@@ -307,7 +307,7 @@ nav a {
     text-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.5);
 }
 
-nav > a:hover {
+nav a:hover {
     color: #ef4138;
     text-shadow: none;
 }
@@ -696,7 +696,7 @@ nav ul ul ul li {
 }
 
 .align-left .title {
-    font-size: 9rem;
+    font-size: 7rem;
     margin: 0;
     width: 100%;
     letter-spacing: rem;
