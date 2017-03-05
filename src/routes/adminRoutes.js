@@ -13,7 +13,6 @@ var albums = [
         subtitle: 'Black and white version',
         name: 'paris-bnw',
         image: 'DSC_7315.jpg'
-
     }, {
         title: 'Animals',
         subtitle: 'Living creatures',

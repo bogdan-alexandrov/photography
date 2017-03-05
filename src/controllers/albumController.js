@@ -22,14 +22,14 @@ var albumController = function (albumService, nav) {
                 nav: nav,
                 album: result
             });
-        })
+        });
     };
 
     return {
         getIndex: getIndex,
         getByName: getByName,
         middleware: middleware
-    }
+    };
 };
 
 module.exports = albumController;

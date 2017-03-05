@@ -70,7 +70,7 @@
 
     <!-- Header -->
     <header class="transition header">
-        <div class="parallax" style="background-image: url(/images/portfolio/thumbnails/DSC_7315.jpg);">
+        <div class="parallax" style="background-image: url(/images/thumbnails/DSC_7315.jpg);">
             <div class="darker"></div>
         </div>
         <div class="main-menu">
@@ -112,18 +112,15 @@
     <div class="content">
 
         <!-- Row-->
-        <div class="masonry gallery row">
+        <div class="masonry row">
 
             <!-- Grid Item-->
             <% for (var i = 0; i < albums.length; i++) { %>
-            <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/images/portfolio/photos/<%= albums[i].image %>"
-                   itemprop="contentUrl" data-size="1200x740">
-                    <img src="/images/portfolio/thumbnails/<%= albums[i].image %>"
-                         itemprop="thumb" alt="<%= albums[i].name %>"/>
+            <div class="grid-item col-md-6 col-sm-6 col-xs-12">
+                <a href="/albums/<%= albums[i].name %>">
+                    <img src="/images/thumbnails/<%= albums[i].image %>" alt="<%= albums[i].name %>"/>
                 </a>
-                <figcaption itemprop="caption description"><%= albums[i].name %></figcaption>
-            </figure>
+            </div>
             <% } %>
             <!-- /Grid Item-->
 

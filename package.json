@@ -5,7 +5,9 @@
   "main": "app.js",
   "author": "Bogi Aleksandrov",
   "dependencies": {
+    "body-parser": "^1.17.0",
     "ejs": "^2.5.6",
+    "emailjs": "^1.0.8",
     "express": "^4.13.3",
     "mongodb": "^2.2.24"
   },

@@ -29,7 +29,7 @@ var albumService = function () {
     return {
         getAll: getAll,
         getByName: getByName
-    }
+    };
 };
 
 module.exports = albumService;

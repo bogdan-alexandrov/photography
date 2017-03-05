@@ -11,7 +11,7 @@ var nav = function () {
         }
     });
 
-    return res = [{
+    return [{
         link: '/',
         title: 'Home'
     }, {
