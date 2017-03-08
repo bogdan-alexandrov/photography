@@ -3,18 +3,19 @@
 
 <head>
     <!-- Document Settings -->
-    <meta charset="utf-8" />
+    <meta charset="utf-8"/>
     <!--[if lt IE 9]>
     <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="" />
-    <meta name="description" content="" />
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="/images/favicon.ico">
     <!-- Page Title -->
     <title>Photography Portfolio</title>
     <!-- Google Fonts -->
-    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600,700,900,200' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600,700,900,200'
+          rel='stylesheet' type='text/css'>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="/css/bootstrap.css">
     <!-- Custom css file -->
@@ -34,165 +35,166 @@
 </head>
 
 <body>
-    <!-- Container -->
-    <main class="container">
-        <!-- Mobile Menu -->
-        <div class="mobile-menu-overlay transition">
-            <div class="mobile-menu"> <i class="fa fa-times fa-2x"></i> </div>
-            <ul class="mobile-menu-content">
-                <% for (var i = 0; i < nav.length; i++) { %>
+<!-- Container -->
+<main class="container">
+    <!-- Mobile Menu -->
+    <div class="mobile-menu-overlay transition">
+        <div class="mobile-menu"><i class="fa fa-times fa-2x"></i></div>
+        <ul class="mobile-menu-content">
+            <% for (var i = 0; i < nav.length; i++) { %>
+            <li>
+                <a href="<%= nav[i].link %>">
+                    <%= nav[i].title %>
+                </a>
+                <% if(nav[i].subItems != undefined) { %>
+                <ul>
+                    <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
+                    <li>
+                        <a href="<%= nav[i].subItems[j].link %>">
+                            <%= nav[i].subItems[j].title %>
+                        </a>
+                    </li>
+                    <% } %>
+                </ul>
+                <% } %>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+    <!-- /Mobile Menu -->
+    <!-- Header -->
+    <header class="transition header">
+        <div class="parallax" style="background-image: url(/images/thumbnails/DSC_7315.jpg);">
+            <div class="darker"></div>
+        </div>
+        <div class="main-menu">
+            <!-- Menu -->
+            <nav id="menu" class="col-md-10 col-sm-10">
+                <ul class="hidden-xs">
+                    <% for (var i = 0; i < nav.length; i++) { %>
                     <li>
                         <a href="<%= nav[i].link %>">
                             <%= nav[i].title %>
                         </a>
                         <% if(nav[i].subItems != undefined) { %>
-                            <ul>
-                                <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
-                                    <li>
-                                        <a href="<%= nav[i].subItems[j].link %>">
-                                            <%= nav[i].subItems[j].title %>
-                                        </a>
-                                    </li>
-                                    <% } %>
-                            </ul>
-                            <% } %>
-                    </li>
-                    <% } %>
-            </ul>
-        </div>
-        <!-- /Mobile Menu -->
-        <!-- Header -->
-        <header class="transition header">
-            <div class="parallax" style="background-image: url(/images/thumbnails/DSC_7315.jpg);">
-                <div class="darker"></div>
-            </div>
-            <div class="main-menu">
-                <!-- Menu -->
-                <nav id="menu" class="col-md-10 col-sm-10">
-                    <ul class="hidden-xs">
-                        <% for (var i = 0; i < nav.length; i++) { %>
+                        <ul>
+                            <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
                             <li>
-                                <a href="<%= nav[i].link %>">
-                                    <%= nav[i].title %>
+                                <a href="<%= nav[i].subItems[j].link %>">
+                                    <%= nav[i].subItems[j].title %>
                                 </a>
-                                <% if(nav[i].subItems != undefined) { %>
-                                    <ul>
-                                        <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
-                                            <li>
-                                                <a href="<%= nav[i].subItems[j].link %>">
-                                                    <%= nav[i].subItems[j].title %>
-                                                </a>
-                                            </li>
-                                            <% } %>
-                                    </ul>
-                                    <% } %>
                             </li>
                             <% } %>
-                    </ul>
-                    <div class="mobile-menu col-xs-2 pull-right visible-xs"> <i class="fa fa-bars fa-2x"></i> </div>
-                </nav>
-                <!-- /Menu -->
-            </div>
-            <div class="item-category">
-                <h1>collections</h1>
-                <p>My best photo albums</p>
-                <div class="border">
-                    <div></div>
-                </div>
-            </div>
-        </header>
-        <!-- /Header -->
-        <!--Content-->
-        <div class="content">
-            <!-- Row-->
-            <div class="masonry row">
-                <!-- Grid Item-->
-                <% for (var i = 0; i < albums.length; i++) { %>
-                    <div class="grid-item col-md-6 col-sm-6 col-xs-12">
-                        <div class="hovereffect"> <img src="/images/thumbnails/<%= albums[i].image %>" alt="<%= albums[i].name %>">
-                            <div class="overlay">
-                                <h2>Effect 12</h2>
-                                <p>
-                                    <a href="/albums/<%= albums[i].name %>">See et </a>
-                                </p>
-                            </div>
-                        </div>
-                        <!--                        </div>-->
-                    </div>
+                        </ul>
+                        <% } %>
+                    </li>
                     <% } %>
-                        <!-- /Grid Item-->
+                </ul>
+                <div class="mobile-menu col-xs-2 pull-right visible-xs"><i class="fa fa-bars fa-2x"></i></div>
+            </nav>
+            <!-- /Menu -->
+        </div>
+        <div class="item-category">
+            <h1>collections</h1>
+            <p>My best photo albums</p>
+            <div class="border">
+                <div></div>
             </div>
-            <!-- /Row -->
-            <!-- Root element of PhotoSwipe. Must have class pswp. -->
-            <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-                <!-- Background of PhotoSwipe.
-                 It's a separate element as animating opacity is faster than rgba(). -->
-                <div class="pswp__bg"></div>
-                <!-- Slides wrapper with overflow:hidden. -->
-                <div class="pswp__scroll-wrap">
-                    <!-- Container that holds slides.
-                    PhotoSwipe keeps only 3 of them in the DOM to save memory.
-                    Don't modify these 3 pswp__item elements, data is added later on. -->
-                    <div class="pswp__container">
-                        <div class="pswp__item"></div>
-                        <div class="pswp__item"></div>
-                        <div class="pswp__item"></div>
+        </div>
+    </header>
+    <!-- /Header -->
+    <!--Content-->
+    <div class="content">
+        <!-- Row-->
+        <div class="masonry row">
+            <!-- Grid Item-->
+            <% for (var i = 0; i < albums.length; i++) { %>
+            <div class="grid-item col-md-6 col-sm-6 col-xs-12">
+                <a href="/albums/<%= albums[i].name %>">
+                    <div class="hovereffect">
+                        <img src="/images/thumbnails/<%= albums[i].image %>" alt="<%= albums[i].name %>"/>
+                        <div class="overlay">
+                            <h2><%= albums[i].title %></h2>
+                            <p><%= albums[i].subtitle %></p>
+                        </div>
                     </div>
-                    <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
-                    <div class="pswp__ui pswp__ui--hidden">
-                        <div class="pswp__top-bar">
-                            <!--  Controls are self-explanatory. Order can be changed. -->
-                            <div class="pswp__counter"></div>
-                            <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                            <button class="pswp__button pswp__button--share" title="Share"></button>
-                            <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                            <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                            <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
-                            <!-- element will get class pswp__preloader active when preloader is running -->
-                            <div class="pswp__preloader">
-                                <div class="pswp__preloader__icn">
-                                    <div class="pswp__preloader__cut">
-                                        <div class="pswp__preloader__donut"></div>
-                                    </div>
+                </a>
+            </div>
+            <% } %>
+
+            <!-- /Grid Item-->
+        </div>
+        <!-- /Row -->
+        <!-- Root element of PhotoSwipe. Must have class pswp. -->
+        <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+            <!-- Background of PhotoSwipe.
+             It's a separate element as animating opacity is faster than rgba(). -->
+            <div class="pswp__bg"></div>
+            <!-- Slides wrapper with overflow:hidden. -->
+            <div class="pswp__scroll-wrap">
+                <!-- Container that holds slides.
+                PhotoSwipe keeps only 3 of them in the DOM to save memory.
+                Don't modify these 3 pswp__item elements, data is added later on. -->
+                <div class="pswp__container">
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                    <div class="pswp__item"></div>
+                </div>
+                <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+                <div class="pswp__ui pswp__ui--hidden">
+                    <div class="pswp__top-bar">
+                        <!--  Controls are self-explanatory. Order can be changed. -->
+                        <div class="pswp__counter"></div>
+                        <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                        <button class="pswp__button pswp__button--share" title="Share"></button>
+                        <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                        <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                        <!-- Preloader demo http://codepen.io/dimsemenov/pen/yyBWoR -->
+                        <!-- element will get class pswp__preloader active when preloader is running -->
+                        <div class="pswp__preloader">
+                            <div class="pswp__preloader__icn">
+                                <div class="pswp__preloader__cut">
+                                    <div class="pswp__preloader__donut"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                            <div class="pswp__share-tooltip"></div>
-                        </div>
-                        <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"> </button>
-                        <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"> </button>
-                        <div class="pswp__caption">
-                            <div class="pswp__caption__center"></div>
-                        </div>
+                    </div>
+                    <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                        <div class="pswp__share-tooltip"></div>
+                    </div>
+                    <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)"></button>
+                    <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)"></button>
+                    <div class="pswp__caption">
+                        <div class="pswp__caption__center"></div>
                     </div>
                 </div>
             </div>
-            <!-- /Root element of PhotoSwipe. Must have class pswp. -->
-            <!-- Back to top button -->
-            <a href="#" class="back-top btn"> <i class="fa fa-angle-up fa-2x"></i> </a>
-            <!-- /Back to top button -->
-            <!-- Footer -->
-            <footer id="footer">
-                <p>&copy; Bogdan Alexandrov 2017. All rights reserved.</p>
-            </footer>
-            <!-- /Footer -->
         </div>
-        <!-- /Content -->
-    </main>
-    <!-- /Container -->
-    <!-- JS -->
-    <!-- jquery-1.11.3.min js -->
-    <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
-    <!-- Plugins -->
-    <script type="text/javascript" src="/js/jquery.fullPage.min.js"></script>
-    <script type="text/javascript" src="/js/imagesloaded.min.js"></script>
-    <script type="text/javascript" src="/js/masonry.​min.js"></script>
-    <script type="text/javascript" src="/js/website-smooth-scroll.js"></script>
-    <script type="text/javascript" src="/js/photoswipe.min.js"></script>
-    <script type="text/javascript" src="/js/photoswipe-ui-default.min.js"></script>
-    <!-- Main js -->
-    <script type="text/javascript" src="/js/main.js"></script>
+        <!-- /Root element of PhotoSwipe. Must have class pswp. -->
+        <!-- Back to top button -->
+        <a href="#" class="back-top btn"> <i class="fa fa-angle-up fa-2x"></i> </a>
+        <!-- /Back to top button -->
+        <!-- Footer -->
+        <footer id="footer">
+            <p>&copy; Bogdan Alexandrov 2017. All rights reserved.</p>
+        </footer>
+        <!-- /Footer -->
+    </div>
+    <!-- /Content -->
+</main>
+<!-- /Container -->
+<!-- JS -->
+<!-- jquery-1.11.3.min js -->
+<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
+<!-- Plugins -->
+<script type="text/javascript" src="/js/jquery.fullPage.min.js"></script>
+<script type="text/javascript" src="/js/imagesloaded.min.js"></script>
+<script type="text/javascript" src="/js/masonry.​min.js"></script>
+<script type="text/javascript" src="/js/website-smooth-scroll.js"></script>
+<script type="text/javascript" src="/js/photoswipe.min.js"></script>
+<script type="text/javascript" src="/js/photoswipe-ui-default.min.js"></script>
+<!-- Main js -->
+<script type="text/javascript" src="/js/main.js"></script>
 </body>
 
 </html>
