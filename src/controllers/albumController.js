@@ -17,10 +17,13 @@ var albumController = function (albumService, nav) {
     };
 
     var getByName = function (req, res) {
-        albumService.getByName(req.params.name, function (result) {
-            res.render('album', {
-                nav: nav,
-                album: result
+        albumService.getByName(req.params.name, function (album) {
+            albumService.getAlbumPhotos(album, function (photos) {
+                res.render('album', { //todo album value from results
+                    nav: nav,
+                    photos: photos,
+                    album: album
+                });
             });
         });
     };

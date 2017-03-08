@@ -25,14 +25,17 @@ var initalPhotos = [
         title: 'Pont Alexandre III',
         subtitle: 'Beautiful Pont Alexandre III',
         name: 'alexandre3-color',
+        album: 'paris'
     }, {
         title: 'Notre dame de paris',
         subtitle: 'I love this sunset',
         name: 'notre-dame',
+        album: 'paris'
     }, {
         title: 'Under the bridge',
         subtitle: 'Best photo ever',
         name: 'under-the-bridge',
+        album: 'paris'
     }
 ];
 

@@ -15,7 +15,7 @@
     <link rel="icon" type="image/png" href="/images/favicon.ico">
 
     <!-- Page Title -->
-    <title>Photography Portfolio</title>
+    <title><%= album.title %> - Bogdan Alexandrov Photography</title>
 
     <!-- Google Fonts -->
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,400italic,600,700,900,200'
@@ -99,8 +99,8 @@
 
         </div>
         <div class="item-category">
-            <h1>gallery</h1>
-            <p>There are many variations of passages of Lorem Ipsum available</p>
+            <h1><%= album.title %></h1>
+            <p><%= album.subtitle %></p>
             <div class="border">
                 <div></div>
             </div>
@@ -115,76 +115,16 @@
         <div class="masonry gallery row">
 
             <!-- Grid Item-->
+            <% for (var i = 0; i < photos.length; i++) { %>
             <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/images/portfolio/gallery-1.jpg" itemprop="contentUrl" data-size="1100x1200">
-                    <img src="/images/thumbnails/gallery-1.jpg" itemprop="thumb" alt="Image description"/>
+                <a href="/images/photos/<%= photos[i].name %>.jpg" itemprop="contentUrl" data-size="1100x1200">
+                    <img src="/images/thumbnails/<%= photos[i].name %>.jpg" alt="<%= photos[i].title %>" itemprop="thumb"/>
                 </a>
-                <figcaption itemprop="caption description">Image caption 1</figcaption>
+                <figcaption itemprop="<%= photos[i].subtitle %>"><%= photos[i].title %></figcaption>
             </figure>
-            <!-- /Grid Item-->
-
-            <!-- Grid Item-->
-            <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/images/portfolio/gallery-2.jpg" itemprop="contentUrl" data-size="1200x750">
-                    <img src="/images/thumbnails/gallery-2.jpg" itemprop="thumb" alt="Image description"/>
-                </a>
-                <figcaption itemprop="caption description">Image caption 2</figcaption>
-            </figure>
-            <!-- /Grid Item-->
-
-            <!-- Grid Item-->
-            <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/images/portfolio/gallery-1.jpg" itemprop="contentUrl" data-size="1200x1200">
-                    <img src="/images/thumbnails/gallery-1.jpg" itemprop="thumb" alt="Image description"/>
-                </a>
-                <figcaption itemprop="caption description">Image caption 3</figcaption>
-            </figure>
-            <!-- /Grid Item-->
-
-            <!-- Grid Item-->
-            <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/images/portfolio/gallery-2.jpg" itemprop="contentUrl" data-size="1200x750">
-                    <img src="/images/thumbnails/gallery-2.jpg" itemprop="thumb" alt="Image description"/>
-                </a>
-                <figcaption itemprop="caption description">Image caption 4</figcaption>
-            </figure>
-            <!-- /Grid Item-->
-
-            <!-- Grid Item-->
-            <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/images/portfolio/gallery-2.jpg" itemprop="contentUrl" data-size="1200x750">
-                    <img src="/images/thumbnails/gallery-2.jpg" itemprop="thumb" alt="Image description"/>
-                </a>
-                <figcaption itemprop="caption description">Image caption 4</figcaption>
-            </figure>
-            <!-- /Grid Item-->
-
-            <!-- Grid Item-->
-            <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/images/portfolio/gallery-1.jpg" itemprop="contentUrl" data-size="1200x750">
-                    <img src="/images/thumbnails/gallery-1.jpg" itemprop="thumb" alt="Image description"/>
-                </a>
-                <figcaption itemprop="caption description">Image caption 5</figcaption>
-            </figure>
-            <!-- /Grid Item-->
-
-            <!-- Grid Item-->
-            <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/images/portfolio/gallery-2.jpg" itemprop="contentUrl" data-size="1200x750">
-                    <img src="/images/thumbnails/gallery-2.jpg" itemprop="thumb" alt="Image description"/>
-                </a>
-                <figcaption itemprop="caption description">Image caption 6</figcaption>
-            </figure>
-            <!-- /Grid Item-->
-
+            <% } %>
         </div>
         <!-- /Row -->
-
-        <!-- Load more button -->
-        <div class="load-more">
-            <a href="#" class="btn">load more <i class="fa fa-angle-down fa-lg"></i></a>
-        </div>
-        <!-- /Load more button -->
 
         <!-- Root element of PhotoSwipe. Must have class pswp. -->
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
