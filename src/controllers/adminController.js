@@ -9,19 +9,33 @@ var albumController = function (adminService, nav) {
 
     var deleteAllPhotos = function (req, res) {
         adminService.deleteAllPhotos(function () {
-            res("All photos are deleted ");
+            res.send('All photos are deleted ');
         });
     };
 
     var initPhotos = function (req, res) {
         adminService.initPhotos(function () {
-            res("Photos initialized ");
+            res.send('Photos initialized ');
+        });
+    };
+
+    var deleteAllAlbums = function (req, res) {
+        adminService.deleteAllPhotos(function () {
+            res.send('All albums are deleted ');
+        });
+    };
+
+    var initAlbums = function (req, res) {
+        adminService.initAlbums(function () {
+            res.send('Albums initialized ');
         });
     };
 
     return {
         deleteAllPhotos: deleteAllPhotos,
+        deleteAllAlbums: deleteAllAlbums,
         initPhotos: initPhotos,
+        initAlbums: initAlbums,
         middleware: middleware
     };
 };

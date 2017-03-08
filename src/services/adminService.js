@@ -42,7 +42,6 @@ var adminService = function () {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('albums');
             collection.insertMany(initalAlbums, function (err, results) {
-                res.send(results);
                 db.close();
             });
         });
@@ -52,9 +51,16 @@ var adminService = function () {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('photos');
             collection.insertMany(initalPhotos, function (err, results) {
-                res.send(results);
                 db.close();
             });
+            cb();
+        });
+    };
+
+    var deleteAllAlbums = function (cb) {
+        mongodb.connect(url, function (err, db) {
+            var collection = db.collection('albums');
+            collection.removeMany({});
             cb();
         });
     };
@@ -70,6 +76,7 @@ var adminService = function () {
     return {
         initAlbums: initAlbums,
         initPhotos: initPhotos,
+        deleteAllAlbums: deleteAllAlbums,
         deleteAllPhotos: deleteAllPhotos
     };
 };
