@@ -7,15 +7,15 @@ var router = function (nav) {
 
     adminRouter.use(controller.middleware);
 
-    adminRouter.route('/delete/photos')
-        .get(controller.deleteAllPhotos);
-    adminRouter.route('/init/photos')
-        .get(controller.initPhotos);
-
     adminRouter.route('/delete/albums')
         .get(controller.deleteAllAlbums);
     adminRouter.route('/init/albums')
         .get(controller.initAlbums);
+
+    adminRouter.route('/delete/photos')
+        .get(controller.deleteAllPhotos);
+    adminRouter.route('/init/photos')
+        .get(controller.initPhotos);
 
     return adminRouter;
 };

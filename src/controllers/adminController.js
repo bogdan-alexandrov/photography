@@ -20,7 +20,7 @@ var albumController = function (adminService, nav) {
     };
 
     var deleteAllAlbums = function (req, res) {
-        adminService.deleteAllPhotos(function () {
+        adminService.deleteAllAlbums(function () {
             res.send('All albums are deleted ');
         });
     };

@@ -47,6 +47,7 @@ var adminService = function () {
             collection.insertMany(initalAlbums, function (err, results) {
                 db.close();
             });
+            cb();
         });
     };
 
