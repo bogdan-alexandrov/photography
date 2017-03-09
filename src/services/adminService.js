@@ -7,17 +7,20 @@ var initalAlbums = [
         title: 'Paris',
         subtitle: 'Most beautiful city',
         name: 'paris',
-        image: 'DSC_8478.jpg'
+        template: 'album_2col.ejs',
+        selectedImg: 'under-the-bridge'
     }, {
         title: 'Paris B & W',
         subtitle: 'Black and white version',
         name: 'paris-bnw',
-        image: 'DSC_7315.jpg'
+        template: 'album_3col.ejs',
+        selectedImg: 'notre-dame'
     }, {
         title: 'Animals',
         subtitle: 'Living creatures',
         name: 'animals',
-        image: 'DSC_8286.jpg'
+        template: 'album_2col.ejs',
+        selectedImg: 'can-you-see-me'
     }
 ];
 var initalPhotos = [
@@ -25,17 +28,32 @@ var initalPhotos = [
         title: 'Pont Alexandre III',
         subtitle: 'Beautiful Pont Alexandre III',
         name: 'alexandre3-color',
-        album: 'paris'
+        album: 'paris',
+        size: '1200x682'
     }, {
         title: 'Notre dame de paris',
         subtitle: 'I love this sunset',
         name: 'notre-dame',
-        album: 'paris'
+        album: 'paris',
+        size: '1200x740'
     }, {
         title: 'Under the bridge',
         subtitle: 'Best photo ever',
         name: 'under-the-bridge',
-        album: 'paris'
+        album: 'paris',
+        size: '1200x763'
+    }, {
+        title: 'Chameleon',
+        subtitle: 'Can you see me ?',
+        name: 'can-you-see-me',
+        album: 'animals',
+        size: '6016x4000'
+    }, {
+        title: 'Montrmarte',
+        subtitle: 'Shoot me',
+        name: 'DSC_9592',
+        album: 'paris-bnw',
+        size: '1200x798'
     }
 ];
 

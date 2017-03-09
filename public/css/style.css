@@ -5,7 +5,6 @@ Version:    1.0
 Author:     madsparrow
 -------------------------------------------------------------------------------------*/
 
-
 /*-------------------------------------------------------------------------------------
 [TABLE OF CONTENTS]
 
@@ -28,9 +27,7 @@ Author:     madsparrow
     
 -------------------------------------------------------------------------------------*/
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  01. GENERAL
 /*-----------------------------------------------------------------------------------*/
@@ -138,9 +135,7 @@ blockquote {
     color: #666;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  02. BUTTON
 /*-----------------------------------------------------------------------------------*/
@@ -212,7 +207,6 @@ blockquote {
     transform: scale3d(0.8, 0.8, 1);
 }
 
-
 /*Load more*/
 
 .load-more {
@@ -221,7 +215,6 @@ blockquote {
     display: inline-block;
     padding-top: 5rem;
 }
-
 
 /* Top buttone */
 
@@ -295,13 +288,10 @@ button {
     color: #aaa;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  03. NAVIGATION
 /*-----------------------------------------------------------------------------------*/
-
 
 /*Nav*/
 
@@ -333,7 +323,6 @@ nav a:hover {
     text-shadow: none;
 }
 
-
 /* Hide Dropdowns by Default */
 
 nav ul ul {
@@ -346,14 +335,12 @@ nav ul ul {
     transition: all .1s cubic-bezier(0.72, .1, .72, .96);
 }
 
-
 /* Display Dropdowns on Hover */
 
 nav ul li:hover > ul {
     opacity: 1;
     visibility: visible;
 }
-
 
 /* Fisrt Tier Dropdown */
 
@@ -381,7 +368,6 @@ nav ul ul li a:hover {
     color: #ef4138 !important;
 }
 
-
 /* Second, Third and more Tiers */
 
 nav ul ul ul li {
@@ -400,7 +386,7 @@ nav ul ul ul li {
     /* Chrome10-25,Safari5.1-6 */
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid: DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
     /* IE6-9 */
 }
 
@@ -423,7 +409,6 @@ nav ul ul ul li {
     margin: 5rem auto;
 }
 
-
 /*Fixed header class*/
 
 .fixed {
@@ -440,9 +425,7 @@ nav ul ul ul li {
     color: #ef4138;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  4. MOBILE MENU NAVIGATION
 /*-----------------------------------------------------------------------------------*/
@@ -495,9 +478,7 @@ nav ul ul ul li {
     visibility: visible;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  05. PARALLAX
 /*-----------------------------------------------------------------------------------*/
@@ -525,7 +506,6 @@ nav ul ul ul li {
     margin: 5rem 0 0 0;
 }
 
-
 /*Border bottom parallax*/
 
 .item-category .border div {
@@ -538,13 +518,10 @@ nav ul ul ul li {
     transform: rotate(180deg);
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  06. HOME PAGE
 /*-----------------------------------------------------------------------------------*/
-
 
 /*Home page border*/
 
@@ -646,7 +623,6 @@ nav ul ul ul li {
     animation-delay: .8s;
 }
 
-
 /*Images home page version 1*/
 
 #section1 {
@@ -664,7 +640,6 @@ nav ul ul ul li {
 #section4 {
     background-image: url(../images/home/home.jpg);
 }
-
 
 /*Images home page version 2*/
 
@@ -847,13 +822,10 @@ nav ul ul ul li {
     margin-top: 3%;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  07. GALLERY AND BLOG ITEM
 /*-----------------------------------------------------------------------------------*/
-
 
 /*Grid style*/
 
@@ -863,7 +835,8 @@ nav ul ul ul li {
     max-width: 120rem;
 }
 
-.row div {}
+.row div {
+}
 
 .row a {
     color: rgba(119, 119, 121, .5);
@@ -890,7 +863,6 @@ nav ul ul ul li {
 .grid-item figcaption {
     display: none;
 }
-
 
 /*Blog style*/
 
@@ -947,7 +919,6 @@ nav ul ul ul li {
     padding: 0
 }
 
-
 /*Hover item*/
 
 .grid-item:hover,
@@ -984,9 +955,7 @@ nav ul ul ul li {
     border-color: #ef4138;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  08. BLOG POST PAGE
 /*-----------------------------------------------------------------------------------*/
@@ -1101,13 +1070,10 @@ ul.comment-list {
     margin-left: -0.4rem;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  09. SOCIAL ICONS
 /*-----------------------------------------------------------------------------------*/
-
 
 /*socials links*/
 
@@ -1168,9 +1134,7 @@ ul.comment-list {
     opacity: 1;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  10. FORMS
 /*-----------------------------------------------------------------------------------*/
@@ -1230,9 +1194,7 @@ textarea.form-control {
     min-height: 15rem;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  11. FOOTER
 /*-----------------------------------------------------------------------------------*/
@@ -1248,9 +1210,7 @@ textarea.form-control {
     bottom: 0;
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  12. RESPONSIVE
 /*-----------------------------------------------------------------------------------*/
@@ -1259,20 +1219,25 @@ textarea.form-control {
     .row {
         margin: 0 50px;
     }
+
     .blog-item.timeline:nth-child(2) {
         margin-top: 33%;
     }
+
     .align-left .title {
         font-size: 86px;
     }
+
     .align-right .title {
         font-size: 4.5rem;
         width: auto;
         text-align: right;
     }
+
     .active .cover-titles-2 {
         padding: 4rem 8.5rem;
     }
+
     .active .right-block {
         padding: 0;
         opacity: 1;
@@ -1285,84 +1250,106 @@ textarea.form-control {
         padding: 30px 0;
         margin: 0 15px;
     }
+
     .content {
         background-image: none;
         background-color: #fcfcfc;
     }
+
     .section {
         opacity: 1;
     }
+
     .header {
         height: 20rem;
     }
+
     .main-menu {
         padding: 0 3rem;
         margin: 2.5rem auto;
     }
+
     .border .frames div {
         height: 15px;
     }
+
     .border .frames div:nth-child(2),
     .border .frames div:nth-child(4) {
         width: 15px;
     }
+
     .border .corners div::before,
     .border .corners div::after {
         display: none;
     }
+
     .item-category {
         padding: 0 1rem;
         margin: 1rem 0;
     }
+
     .item-category h1 {
         font-size: 3rem !important;
     }
+
     .section {
         opacity: 1;
     }
+
     .active .cover-titles {
         padding: 0;
     }
+
     .blog-item:nth-child(2),
     .blog-item.timeline:nth-child(2) {
         margin-top: 0;
     }
+
     .left-block {
         margin: 2rem 0 0;
     }
+
     .align-left p:first-child {
         margin: 0 auto;
         padding-bottom: 0;
         text-align: center;
     }
+
     .align-left .title {
         font-size: 5rem;
         letter-spacing: 0;
         text-align: center;
     }
+
     .align-right .title {
         float: none;
         width: 100%;
         text-align: center;
     }
+
     .align-left p {
         margin: 0 auto 1.2rem auto;
         text-align: center;
         float: none;
         padding: 0;
     }
+
     .cover-titles {
         text-align: center;
     }
+
     .cover-titles {
         padding: 0 5%;
     }
+
     .cover-titles-text {
         margin: 0 auto;
     }
+
     .post-info {
         min-height: 25rem;
     }
+
     .date {
         position: relative;
         font-size: 4em;
@@ -1370,6 +1357,7 @@ textarea.form-control {
         text-align: left;
         opacity: .8;
     }
+
     .date span {
         font-size: 1.2rem;
         font-weight: 400;
@@ -1378,38 +1366,48 @@ textarea.form-control {
         bottom: 1.6rem;
         width: 3rem;
     }
+
     .date span i {
         display: none;
     }
+
     .post-comments .user-avatar {
         width: 3.5em;
         margin-right: 1rem;
     }
+
     .post-comments .comment-content {
         margin-left: 0;
     }
+
     .comment-list ul {
         margin: 0;
     }
+
     .comment-list div p {
         margin-top: 2rem;
     }
+
     .contact_form h3,
     .contact_form p {
         text-align: left;
     }
+
     .grid-item:hover img,
     .blog-item:hover img {
         -webkit-box-shadow: 0 1.2rem 1.8rem 0 rgba(0, 0, 0, 0.24), 0 1.7rem 5rem 0 rgba(0, 0, 0, 0.19);
         box-shadow: 0 1.2rem 1.8rem 0 rgba(0, 0, 0, 0.24), 0 1.7rem 5rem 0 rgba(0, 0, 0, 0.19);
     }
+
     .blog-item {
         margin-bottom: 3rem;
     }
+
     .back-top {
         right: 3rem;
         box-shadow: 0 .1rem .3rem rgba(0, 0, 0, .7);
     }
+
     .text-right i,
     .timeline .text-right i {
         margin-right: -1.2rem;
@@ -1421,15 +1419,18 @@ textarea.form-control {
         margin: 2rem 0 0;
         padding: 0 3rem;
     }
+
     .align-left .title,
     .align-right .title {
         font-size: 10vw;
         letter-spacing: 0;
         text-align: center;
     }
+
     .align-right p:first-child {
         display: none;
     }
+
     .align-right p {
         margin: 0 auto 1.2rem auto;
         text-align: center;
@@ -1444,19 +1445,23 @@ textarea.form-control {
         float: none;
         margin: 0 auto;
     }
+
     .right-block {
         display: none;
     }
+
     .active .cover-titles-2 {
         margin: 2rem 0 0;
         padding: 0 3rem;
     }
+
     .align-left .title,
     .align-right .title {
         font-size: 10vw;
         letter-spacing: 0;
         text-align: center;
     }
+
     .align-right p {
         margin: 0 auto 1.2rem auto;
         text-align: center;
@@ -1469,21 +1474,22 @@ textarea.form-control {
     .cover-titles {
         margin-top: 0;
     }
+
     .align-left p {
         margin: 0 auto 1.2rem auto;
         max-width: 40rem;
     }
+
     .mobile-menu-content {
         top: 7rem;
     }
+
     #footer {
         height: 7rem;
     }
 }
 
-
 /*-----------------------------------------------------------------------------------*/
-
 
 /*  13. GALLERYs
 /*-----------------------------------------------------------------------------------*/
@@ -1569,6 +1575,8 @@ textarea.form-control {
 
 /*-----------------------------------------------------------------------------------*/
 
-
-/*  14. RESPONSIVE
+/*  14. customisations
 /*-----------------------------------------------------------------------------------*/
+.pswp__caption__center {
+    text-align: center !important;
+}

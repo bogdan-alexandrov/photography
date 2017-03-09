@@ -64,7 +64,8 @@
     <!-- /Mobile Menu -->
     <!-- Header -->
     <header class="transition header">
-        <div class="parallax" style="background-image: url(/images/thumbnails/DSC_7315.jpg);">
+        <div class="parallax"
+             style="background-image: url(/images/headers/gallery.jpg);"        >
             <div class="darker"></div>
         </div>
         <div class="main-menu">
@@ -112,7 +113,9 @@
             <div class="grid-item col-md-6 col-sm-6 col-xs-12">
                 <a href="/albums/<%= albums[i].name %>">
                     <div class="hovereffect">
-                        <img src="/images/thumbnails/<%= albums[i].image %>" alt="<%= albums[i].name %>"/>
+                        <img src="/images/photos/<%= albums[i].selectedImg %>_thumb.jpg"
+                             alt="<%= albums[i].name %>"
+                        />
                         <div class="overlay">
                             <h2><%= albums[i].title %></h2>
                             <p><%= albums[i].subtitle %></p>
