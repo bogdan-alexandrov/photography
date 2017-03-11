@@ -1,10 +1,10 @@
 var email = require('emailjs');
 
 var server = email.server.connect({
-    user: 'mail',
-    password: 'pass',
-    host: 'smtp.gmail.com',
-    ssl: true
+    user: process.env.EMAIL_USER,
+    password: process.env.EMAIL_PASS,
+    host: process.env.EMAIL_HOST,
+    ssl: process.env.EMAIL_SSL
 });
 
 var service = function () {
@@ -14,7 +14,7 @@ var service = function () {
         server.send({
             text: mailBody,
             from: fromName + '<' + fromEmail + '>',
-            to: 'Bogi <aleksandrov.bogdan@gmail.com>',
+            to: 'Bogi <' + process.env.EMAIL_TO + '>',
             subject: '[PHOTOGRAPHY] - new email form ' + fromName
         }, function (err, message) {
             console.log(err || message);

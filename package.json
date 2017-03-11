@@ -6,6 +6,7 @@
   "author": "Bogi Aleksandrov",
   "dependencies": {
     "body-parser": "^1.17.0",
+    "dotenv": "^4.0.0",
     "ejs": "^2.5.6",
     "emailjs": "^1.0.8",
     "express": "^4.13.3",

@@ -1,0 +1,22 @@
+<div class="main-menu">
+    <nav id="menu" class="col-md-10 col-sm-10">
+        <ul class="hidden-xs">
+            <% for (var i = 0; i < nav.length; i++) { %>
+            <li>
+                <!--class="menu-active"-->
+                <a href="<%= nav[i].link %>"><%= nav[i].title %></a>
+                <% if(nav[i].subItems != undefined) { %>
+                <ul>
+                    <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
+                    <li><a href="<%= nav[i].subItems[j].link %>"><%= nav[i].subItems[j].title %></a></li>
+                    <% } %>
+                </ul>
+                <% } %>
+            </li>
+            <% } %>
+        </ul>
+        <div class="mobile-menu col-xs-2 pull-right visible-xs">
+            <i class="fa fa-bars fa-2x"></i>
+        </div>
+    </nav>
+</div>

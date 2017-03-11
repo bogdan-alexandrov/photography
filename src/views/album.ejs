@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head>
+<<head>
+    <%- include ./common/head.ejs %>
+</head>
+>
     <!-- Document Settings -->
 
     <meta charset="utf-8"/>
@@ -47,25 +50,7 @@
 <main class="container">
 
     <!-- Mobile Menu -->
-    <div class="mobile-menu-overlay transition">
-        <div class="mobile-menu">
-            <i class="fa fa-times fa-2x"></i>
-        </div>
-        <ul class="mobile-menu-content">
-            <% for (var i = 0; i < nav.length; i++) { %>
-            <li>
-                <a href="<%= nav[i].link %>"><%= nav[i].title %></a>
-                <% if(nav[i].subItems != undefined) { %>
-                <ul>
-                    <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
-                    <li><a href="<%= nav[i].subItems[j].link %>"><%= nav[i].subItems[j].title %></a></li>
-                    <% } %>
-                </ul>
-                <% } %>
-            </li>
-            <% } %>
-        </ul>
-    </div>
+    <%- include ./common/mobileMenu.ejs %>
     <!-- /Mobile Menu -->
 
     <!-- Header -->
@@ -73,31 +58,9 @@
         <div class="parallax">
             <div class="darker"></div>
         </div>
-        <div class="main-menu">
-
-            <!-- Menu -->
-            <nav id="menu" class="col-md-10 col-sm-10">
-                <ul class="hidden-xs">
-                    <% for (var i = 0; i < nav.length; i++) { %>
-                    <li>
-                        <a href="<%= nav[i].link %>"><%= nav[i].title %></a>
-                        <% if(nav[i].subItems != undefined) { %>
-                        <ul>
-                            <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
-                            <li><a href="<%= nav[i].subItems[j].link %>"><%= nav[i].subItems[j].title %></a></li>
-                            <% } %>
-                        </ul>
-                        <% } %>
-                    </li>
-                    <% } %>
-                </ul>
-                <div class="mobile-menu col-xs-2 pull-right visible-xs">
-                    <i class="fa fa-bars fa-2x"></i>
-                </div>
-            </nav>
-            <!-- /Menu -->
-
-        </div>
+        <!-- Main menu -->
+        <%- include ./common/menu.ejs %>
+        <!-- /Main menu -->
         <div class="item-category">
             <h1><%= album.title %></h1>
             <p><%= album.subtitle %></p>
@@ -182,10 +145,7 @@
         <!-- /Back to top button -->
 
         <!-- Footer -->
-        <footer id="footer">
-            <p>&copy; Bogdan Alexandrov 2017. All rights reserved.</p>
-        </footer>
-        <!-- /Footer -->
+        <%- include ./common/footer.ejs%>
 
     </div>
     <!-- /Content -->
@@ -194,19 +154,7 @@
 <!-- /Container -->
 
 <!-- JS -->
+<%- include ./common/javascript.ejs%>
 
-<!-- jquery-1.11.3.min js -->
-<script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
-
-<!-- Plugins -->
-<script type="text/javascript" src="/js/jquery.fullPage.min.js"></script>
-<script type="text/javascript" src="/js/imagesloaded.min.js"></script>
-<script type="text/javascript" src="/js/masonry.​min.js"></script>
-<script type="text/javascript" src="/js/website-smooth-scroll.js"></script>
-<script type="text/javascript" src="/js/photoswipe.min.js"></script>
-<script type="text/javascript" src="/js/photoswipe-ui-default.min.js"></script>
-
-<!-- Main js -->
-<script type="text/javascript" src="/js/main.js"></script>
 </body>
 </html>

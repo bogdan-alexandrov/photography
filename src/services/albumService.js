@@ -1,6 +1,6 @@
 var mongodb = require('mongodb').MongoClient;
 
-var url = 'mongodb://localhost:27017/photography';
+var url = process.env.DATABASE;
 
 var albumService = function () {
 
