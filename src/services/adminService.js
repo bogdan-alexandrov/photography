@@ -21,6 +21,12 @@ var initalAlbums = [
         name: 'animals',
         template: 'album_2col.ejs',
         selectedImg: 'can-you-see-me'
+    }, {
+        title: 'Crystal ball',
+        subtitle: 'Let\'s walk around',
+        name: 'crystal-ball',
+        template: 'album_2col.ejs',
+        selectedImg: 'can-you-see-me'
     }
 ];
 var initalPhotos = [
