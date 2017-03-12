@@ -319,8 +319,8 @@ nav a {
 }
 
 nav a:hover {
-    color: #ef4138;
-    text-shadow: none;
+    color: black;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
 }
 
 /* Hide Dropdowns by Default */
