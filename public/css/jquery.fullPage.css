@@ -1,5 +1,5 @@
-/**
- * fullPage 2.6.4
+/*!
+ * fullPage 2.9.4
  * https://github.com/alvarotrigo/fullPage.js
  * MIT licensed
  *
@@ -61,9 +61,13 @@ html.fp-enabled,
     position: relative;
 }
 .fp-controlArrow {
+    -webkit-user-select: none; /* webkit (safari, chrome) browsers */
+    -moz-user-select: none; /* mozilla browsers */
+    -khtml-user-select: none; /* webkit (konqueror) browsers */
+    -ms-user-select: none; /* IE10+ */
     position: absolute;
     z-index: 4;
-    top: 45%;
+    top: 50%;
     cursor: pointer;
     width: 0;
     height: 0;
@@ -85,7 +89,14 @@ html.fp-enabled,
     border-color: transparent transparent transparent #fff;
 }
 .fp-scrollable {
-    overflow: scroll;
+    overflow: hidden;
+    position: relative;
+}
+.fp-scroller{
+    overflow: hidden;
+}
+.iScrollIndicator{
+    border: 0 !important;
 }
 .fp-notransition {
     -webkit-transition: none !important;
@@ -100,16 +111,19 @@ html.fp-enabled,
     -webkit-transform: translate3d(0,0,0);
 }
 #fp-nav.right {
-    right: 5.5rem;
+    right: 17px;
 }
 #fp-nav.left {
-    left: 6rem;
+    left: 17px;
 }
 .fp-slidesNav{
     position: absolute;
     z-index: 4;
     left: 50%;
     opacity: 1;
+    -webkit-transform: translate3d(0,0,0);
+    -ms-transform: translate3d(0,0,0);
+    transform: translate3d(0,0,0);
 }
 .fp-slidesNav.bottom {
     bottom: 17px;
@@ -126,7 +140,7 @@ html.fp-enabled,
 .fp-slidesNav ul li {
     display: block;
     width: 14px;
-    height: 14px;
+    height: 13px;
     margin: 7px;
     position:relative;
 }
@@ -149,9 +163,7 @@ html.fp-enabled,
 .fp-slidesNav ul li:hover a.active span{
     height: 12px;
     width: 12px;
-    background: transparent;
-    border: solid 2px #E1393C;
-    margin: -5px 0 0 -6px;
+    margin: -6px 0 0 -6px;
     border-radius: 100%;
  }
 #fp-nav ul li a span,
@@ -162,7 +174,7 @@ html.fp-enabled,
     height: 4px;
     width: 4px;
     border: 0;
-    background: #E1393C;
+    background: #333;
     left: 50%;
     top: 50%;
     margin: -2px 0 0 -2px;
@@ -173,8 +185,8 @@ html.fp-enabled,
 }
 #fp-nav ul li:hover a span,
 .fp-slidesNav ul li:hover a span{
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     margin: -5px 0px 0px -5px;
 }
 #fp-nav ul li .fp-tooltip {
@@ -182,19 +194,21 @@ html.fp-enabled,
     top: -2px;
     color: #fff;
     font-size: 14px;
-    font-family: 'Source Sans Pro', arial, helvetica, sans-serif;
+    font-family: arial, helvetica, sans-serif;
     white-space: nowrap;
     max-width: 220px;
     overflow: hidden;
     display: block;
     opacity: 0;
     width: 0;
+    cursor: pointer;
 }
 #fp-nav ul li:hover .fp-tooltip,
 #fp-nav.fp-show-active a.active + .fp-tooltip {
     -webkit-transition: opacity 0.2s ease-in;
     transition: opacity 0.2s ease-in;
     width: auto;
+    opacity: 1;
 }
 #fp-nav ul li .fp-tooltip.right {
     right: 20px;
@@ -202,9 +216,14 @@ html.fp-enabled,
 #fp-nav ul li .fp-tooltip.left {
     left: 20px;
 }
+.fp-auto-height.fp-section,
+.fp-auto-height .fp-slide,
+.fp-auto-height .fp-tableCell{
+    height: auto !important;
+}
 
-@media (max-width: 800px){
-    #fp-nav{
-        display: none !important;
-    }
+.fp-responsive .fp-auto-height-responsive.fp-section,
+.fp-responsive .fp-auto-height-responsive .fp-slide,
+.fp-responsive .fp-auto-height-responsive .fp-tableCell {
+    height: auto !important;
 }
