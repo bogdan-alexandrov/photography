@@ -6,7 +6,8 @@ var router = function (nav) {
     contactRouter.route('/')
         .get(function (req, res) {
             res.render('contact', {
-                nav: nav
+                nav: nav,
+                title: 'Contact - Bogdan Alexandrov Photography'
             });
         })
         .post(function (req, res) {

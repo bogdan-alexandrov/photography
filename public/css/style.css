@@ -624,13 +624,16 @@ nav ul ul ul li {
 }
 
 /*Images home page version 1*/
-
+.section{
+    background-position: 80%;
+}
 #section1 {
     background-image: url(../images/home/home1.jpg);
 }
 
 #section2 {
     background-image: url(../images/home/home2.jpg);
+    background-position: 70%;
 }
 
 #section3 {

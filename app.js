@@ -26,12 +26,21 @@ app.use('/admin', adminRouter);
 
 app.get('/', function (req, res) {
     res.render('index', {
-        nav: nav
+        nav: nav,
+        title: 'Bogdan Alexandrov Photography'
     });
 });
 app.get('/about', function (req, res) {
     res.render('about', {
-        nav: nav
+        nav: nav,
+        title: 'About me - Bogdan Alexandrov Photography'
+    });
+});
+
+app.get('/404', function (req, res) {
+    res.render('404', {
+        nav: nav,
+        title: 'Page not found - Bogdan Alexandrov Photography'
     });
 });
 
