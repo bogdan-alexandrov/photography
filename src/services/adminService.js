@@ -26,7 +26,7 @@ var initalAlbums = [
         subtitle: 'Let\'s walk around',
         name: 'crystal-ball',
         template: 'album_2col.ejs',
-        selectedImg: 'can-you-see-me'
+        selectedImg: 'ball2'
     }
 ];
 var initalPhotos = [
@@ -60,6 +60,36 @@ var initalPhotos = [
         name: 'DSC_9592',
         album: 'paris-bnw',
         size: '1200x798'
+    }, {
+        title: 'Opera',
+        subtitle: 'Opera in crystal ball',
+        name: 'ball1',
+        album: 'crystal-ball',
+        size: '1200x800'
+    }, {
+        title: 'Carousel',
+        subtitle: 'Carousel Les Halles',
+        name: 'ball2',
+        album: 'crystal-ball',
+        size: '1200x800'
+    }, {
+        title: 'Pont Alexandre III',
+        subtitle: 'Pont Alexandre III in crystal ball',
+        name: 'ball3',
+        album: 'crystal-ball',
+        size: '1200x800'
+    }, {
+        title: 'Arc de triumph',
+        subtitle: 'Arc de triumph in crystal ball',
+        name: 'ball4',
+        album: 'crystal-ball',
+        size: '1200x800'
+    }, {
+        title: 'Metro',
+        subtitle: 'Metro in crystal ball',
+        name: 'ball5',
+        album: 'crystal-ball',
+        size: '1200x800'
     }
 ];
 
