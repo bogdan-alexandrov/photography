@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 app.use('/albums', albumsRouter);
 app.use('/contact', contactRouter);
-app.use('/admin', adminRouter);
+//app.use('/admin', adminRouter);
 
 app.get('/', function (req, res) {
     res.render('index', {
