@@ -10,7 +10,7 @@ var port = process.env.PORT || 5000;
 
 var nav = require('./src/services/navigation.js')();
 
-var adminRouter = require('./src/routes/adminRoutes.js')(nav);
+//var adminRouter = require('./src/routes/adminRoutes.js')(nav);
 var albumsRouter = require('./src/routes/albumRoutes.js')(nav);
 var contactRouter = require('./src/routes/contactRoutes.js')(nav);
 
