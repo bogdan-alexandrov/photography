@@ -633,11 +633,11 @@ nav ul ul ul li {
 
 #section2 {
     background-image: url(../images/home/home2.jpg);
+    background-position: 70%;
 }
 
 #section3 {
     background-image: url(../images/home/home3.jpg);
-    background-position: 65%;
 }
 
 #section4 {
