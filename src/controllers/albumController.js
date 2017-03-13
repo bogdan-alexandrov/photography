@@ -11,6 +11,7 @@ var albumController = function (albumService, nav) {
         albumService.getAll(function (results) {
             res.render('albums', {
                 nav: nav,
+                title: 'Portfolio - Bogdan Alexandrov Photography',
                 albums: results
             });
         });
@@ -21,6 +22,7 @@ var albumController = function (albumService, nav) {
             albumService.getAlbumPhotos(album, function (photos) {
                 res.render(album.template, {
                     nav: nav,
+                    title: album.title + ' - Bogdan Alexandrov Photography',
                     photos: photos,
                     album: album
                 });
