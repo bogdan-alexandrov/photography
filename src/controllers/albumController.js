@@ -1,10 +1,15 @@
 var mongodb = require('mongodb').MongoClient;
 
-var albumController = function (albumService, nav) {
+var albumController = function (albumService, nav, mcache) {
 
     var middleware = function (req, res, next) {
-        //if validation
-        next();
+        var key = '__express__' + req.originalUrl || req.url;
+        var cachedBody = mcache.get(key);
+        if (cachedBody) {
+            res.send(cachedBody);
+        } else {
+            next();
+        }
     };
 
     var getIndex = function (req, res) {
@@ -13,6 +18,11 @@ var albumController = function (albumService, nav) {
                 nav: nav,
                 title: 'Portfolio - Bogdan Alexandrov Photography',
                 albums: results
+            }, function (err, html) {
+                var key = '__express__' + req.originalUrl || req.url;
+                mcache.put(key, html, 70000000);
+                console.log('Cached :' + key);
+                res.send(html);
             });
         });
     };
@@ -25,6 +35,11 @@ var albumController = function (albumService, nav) {
                     title: album.title + ' - Bogdan Alexandrov Photography',
                     photos: photos,
                     album: album
+                }, function (err, html) {
+                    var key = '__express__' + req.originalUrl || req.url;
+                    mcache.put(key, html, 70000000);
+                    console.log('Cached :' + key);
+                    res.send(html);
                 });
             });
         });

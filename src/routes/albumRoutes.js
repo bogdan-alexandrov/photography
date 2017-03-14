@@ -1,10 +1,10 @@
 var express = require('express');
 var albumRouter = express.Router();
 
-var router = function (nav) {
+var router = function (nav, mcache) {
 
     var albumService = require('../services/albumService.js')();
-    var albumController = require('../controllers/albumController')(albumService, nav);
+    var albumController = require('../controllers/albumController.js')(albumService, nav, mcache);
 
     albumRouter.use(albumController.middleware);
 
