@@ -14,7 +14,31 @@ var adminRouter = require('./src/routes/adminRoutes.js')(nav);
 var albumsRouter = require('./src/routes/albumRoutes.js')(nav);
 var contactRouter = require('./src/routes/contactRoutes.js')(nav);
 
+//input forms ....
 app.use(bodyParser.urlencoded({extended: true}));
+// browser cache for static resources
+app.use(function (req, res, next) {
+    var cacheTypes = [
+        '.css',
+        '.js',
+        '.jpg',
+        '.png',
+        '.gif',
+        '.ico',
+        '.svg',
+        '.otf',
+        '.eot',
+        '.ttf',
+        '.woff',
+        '.woff2'
+    ];
+    cacheTypes.forEach(function (type) {
+        if (req.url.endsWith(type)){
+            res.setHeader("Cache-Control", "max-age=31556926");
+        }
+    });
+    return next();
+});
 app.use(express.static('public'));
 
 app.set('views', './src/views');

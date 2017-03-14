@@ -1265,7 +1265,7 @@ textarea.form-control {
     }
 
     .align-left .title {
-        font-size: 86px;
+        font-size: 6rem;
     }
 
     .align-right .title {
@@ -1497,7 +1497,7 @@ textarea.form-control {
 
     .align-left .title,
     .align-right .title {
-        font-size: 10vw;
+        font-size: 5vw;
         letter-spacing: 0;
         text-align: center;
     }
