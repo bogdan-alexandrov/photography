@@ -33,7 +33,7 @@ app.use(function (req, res, next) {
         '.woff2'
     ];
     cacheTypes.forEach(function (type) {
-        if (req.url.endsWith(type)) {
+        if (req.url.includes(type)) {
             res.setHeader("Cache-Control", "max-age=31556926");
         }
     });
