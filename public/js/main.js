@@ -313,13 +313,13 @@ jQuery(function () {
                     },
                     email: {
                         required: "<i class='fa fa-times-circle'></i>Please enter your email",
-                        email: "<i class='fa fa-times-circle'></i>Please enter a valid email address.",
+                        email: "<i class='fa fa-times-circle'></i>Please enter a valid email address."
                     },
                     message: {
                         required: "<i class='fa fa-times-circle'></i>Please write me message",
                         minlength: "<i class='fa fa-times-circle'></i>Your message must consist of at least 16 characters",
-                        maxlength: "<i class='fa fa-times-circle'></i>The maximum number of characters - 100 ",
-                    },
+                        maxlength: "<i class='fa fa-times-circle'></i>The maximum number of characters - 100 "
+                    }
                 },
                 submitHandler: function (form) {
                     $.ajax({

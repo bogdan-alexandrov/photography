@@ -94,7 +94,6 @@ var initalPhotos = [
 ];
 
 var adminService = function () {
-
     var initAlbums = function (cb) {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('albums');
