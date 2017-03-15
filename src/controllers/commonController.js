@@ -11,15 +11,19 @@ var controller = function (nav, mcache) {
         }
     };
 
+    function putInCache(req, res, html) {
+        var key = '__express__' + req.originalUrl || req.url;
+        mcache.put(key, html, Number(process.env.CACHE_SERVER));
+        console.log('Cached :' + key);
+        res.send(html);
+    }
+
     var home = function (req, res) {
         res.render('index', {
             nav: nav,
             title: 'Bogdan Alexandrov Photography'
         }, function (err, html) {
-            var key = '__express__' + req.originalUrl || req.url;
-            mcache.put(key, html, 70000000);
-            console.log('Cached :' + key);
-            res.send(html);
+            putInCache(req, res, html);
         });
     };
 
@@ -28,10 +32,7 @@ var controller = function (nav, mcache) {
             nav: nav,
             title: 'About me - Bogdan Alexandrov Photography'
         }, function (err, html) {
-            var key = '__express__' + req.originalUrl || req.url;
-            mcache.put(key, html, 70000000);
-            console.log('Cached :' + key);
-            res.send(html);
+            putInCache(req, res, html);
         });
     };
 
@@ -40,10 +41,7 @@ var controller = function (nav, mcache) {
             nav: nav,
             title: 'Contact - Bogdan Alexandrov Photography'
         }, function (err, html) {
-            var key = '__express__' + req.originalUrl || req.url;
-            mcache.put(key, html, 70000000);
-            console.log('Cached :' + key);
-            res.send(html);
+            putInCache(req, res, html);
         });
     };
 
@@ -61,10 +59,10 @@ var controller = function (nav, mcache) {
     };
 
     var notFound = function (req, res) {
-        res.render('404', {
+        res.status(404).render('404', {
             nav: nav,
             title: 'Contact - Bogdan Alexandrov Photography'
-        });// todo set 404
+        });
     };
 
     return {

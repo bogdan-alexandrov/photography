@@ -9,7 +9,7 @@ var router = function (nav, mcache) {
     commonRouter.route('/about').get(controller.about);
     commonRouter.route('/contact').get(controller.contact);
     commonRouter.route('/contact').post(controller.sendEmail);
-    commonRouter.route('/').get(controller.notFound);
+    commonRouter.route('*').get(controller.notFound);
 
     return commonRouter;
 };

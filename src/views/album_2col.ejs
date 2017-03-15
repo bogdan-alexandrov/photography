@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <!--SEO-->
+    <link rel="canonical" href="<%= process.env.SITE_DOMAIN %>/album/<%= album.name %>"/>
+
     <%- include ./common/head.ejs %>
 </head>
 <body>
@@ -108,7 +111,7 @@
         <!-- /Back to top button -->
 
         <!-- Footer -->
-        <%- include ./common/footer.ejs%>
+        <%- include ./common/footer.ejs %>
 
     </div>
     <!-- /Content -->
@@ -117,7 +120,7 @@
 <!-- /Container -->
 
 <!-- JS -->
-<%- include ./common/javascript.ejs%>
+<%- include ./common/javascript.ejs %>
 
 </body>
 </html>

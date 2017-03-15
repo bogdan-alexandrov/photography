@@ -44,16 +44,16 @@ app.use(express.static('public'));
 app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
-
 // ROUTES
 var nav = require('./src/services/navigation.js')();
 var adminRouter = require('./src/routes/adminRoutes.js')(nav);
 var albumsRouter = require('./src/routes/albumRoutes.js')(nav, mcache);
+var seoRouter = require('./src/routes/seoRoutes.js')(nav, mcache);
 var contactRouter = require('./src/routes/commonRoutes.js')(nav, mcache);
 app.use('/albums', albumsRouter);
 app.use('/admin', adminRouter);
+app.use('/', seoRouter);
 app.use('/', contactRouter);
-
 
 app.listen(port, function () {
     console.log('running server on port ' + port);

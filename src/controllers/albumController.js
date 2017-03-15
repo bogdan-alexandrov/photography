@@ -12,6 +12,13 @@ var albumController = function (albumService, nav, mcache) {
         }
     };
 
+    function putInCache(req, res, html) {
+        var key = '__express__' + req.originalUrl || req.url;
+        mcache.put(key, html, Number(process.env.CACHE_SERVER));
+        console.log('Cached :' + key);
+        res.send(html);
+    }
+
     var getIndex = function (req, res) {
         albumService.getAll(function (results) {
             res.render('albums', {
@@ -19,10 +26,7 @@ var albumController = function (albumService, nav, mcache) {
                 title: 'Portfolio - Bogdan Alexandrov Photography',
                 albums: results
             }, function (err, html) {
-                var key = '__express__' + req.originalUrl || req.url;
-                mcache.put(key, html, 70000000);
-                console.log('Cached :' + key);
-                res.send(html);
+                putInCache(req, res, html);
             });
         });
     };
@@ -36,10 +40,7 @@ var albumController = function (albumService, nav, mcache) {
                     photos: photos,
                     album: album
                 }, function (err, html) {
-                    var key = '__express__' + req.originalUrl || req.url;
-                    mcache.put(key, html, 70000000);
-                    console.log('Cached :' + key);
-                    res.send(html);
+                    putInCache(req, res, html);
                 });
             });
         });
