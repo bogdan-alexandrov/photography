@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+    <%- include common/head_commons.ejs %>
+
     <!--SEO-->
     <link rel="canonical" href="<%= process.env.SITE_DOMAIN %>/"/>
-
-    <%- include ./common/head.ejs %>
+    <meta name="description" content="Welcome to my Bogdan Alexandrov Photography. In my albums you will find Paris, black and white photos, cityscapes, animals ..."/>
 
     <!--Facebook OG tags-->
     <meta property="og:title" content="<%= title %>"/>
