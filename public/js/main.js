@@ -86,6 +86,7 @@ jQuery(function () {
         /* 05 - Mobile Menu Navigation */
         /*==============================*/
         $('.mobile-menu i').on('click', function () {
+            $('.mobile-menu .fa-bars').toggleClass('hidden');
             $('.mobile-menu-overlay').toggleClass('visible');
         });
         $('.mobile-menu-overlay').find('.dropdown').on('click', function () {

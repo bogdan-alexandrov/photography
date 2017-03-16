@@ -1,9 +1,9 @@
 var express = require('express');
 var seoRouter = express.Router();
 
-var router = function (nav, mcache) {
+var router = function () {
     var albumService = require('../services/albumService.js')();
-    var controller = require('../controllers/seoController.js')(albumService, mcache);
+    var controller = require('../controllers/seoController.js')(albumService);
 
     seoRouter.use(controller.middleware);
 

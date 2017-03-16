@@ -5,7 +5,7 @@ var url = process.env.DATABASE;
 var initalAlbums = [
     {
         title: 'Paris',
-        subtitle: 'Most beautiful city',
+        subtitle: 'The most beautiful city',
         name: 'paris',
         template: 'album_2col.ejs',
         selectedImg: 'under-the-bridge'

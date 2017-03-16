@@ -48,7 +48,7 @@ app.set('view engine', 'ejs');
 var nav = require('./src/services/navigation.js')();
 var adminRouter = require('./src/routes/adminRoutes.js')(nav);
 var albumsRouter = require('./src/routes/albumRoutes.js')(nav, mcache);
-var seoRouter = require('./src/routes/seoRoutes.js')(nav, mcache);
+var seoRouter = require('./src/routes/seoRoutes.js')();
 var contactRouter = require('./src/routes/commonRoutes.js')(nav, mcache);
 app.use('/albums', albumsRouter);
 app.use('/admin', adminRouter);
