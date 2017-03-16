@@ -45,7 +45,7 @@
                 <a href="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>.jpg"
                    itemprop="contentUrl" data-size="<%= photos[i].size %>">
                     <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>_thumb.jpg"
-                         alt="<%= photos[i].title %>"
+                         alt="<%= photos[i].subtitle %>"
                          itemprop="thumb"/>
                 </a>
                 <figcaption itemprop="<%= photos[i].subtitle %>"><%= photos[i].title %></figcaption>

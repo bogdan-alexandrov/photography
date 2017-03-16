@@ -458,7 +458,7 @@ nav ul ul ul li {
     z-index: 101;
     text-align: right;
     /*background: #ef4138;*/
-    background: rgba(0, 0, 0, 0.6);
+    background: rgba(0, 0, 0, 0.85);
     overflow: auto;
     padding: 2.4rem 2.6rem;
     opacity: 0;
