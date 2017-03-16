@@ -147,7 +147,6 @@ blockquote {
 .btn {
     padding: 1rem 2rem;
     position: relative;
-    border: none;
     opacity: 0;
     z-index: 1;
     background: none;
@@ -677,7 +676,7 @@ nav ul ul ul li {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 0%;
+    width: 0;
     min-height: 80%;
     color: #fff;
     animation-delay: .8s;
@@ -708,19 +707,19 @@ nav ul ul ul li {
 /*Images home page version 2*/
 
 #section1-v2 {
-    background-image: url(../images/home/home.jpg);
+    background-image: url(../images/home/home1.jpg);
 }
 
 #section2-v2 {
-    background-image: url(../images/home/home.jpg);
+    background-image: url(../images/home/home2.jpg);
 }
 
 #section3-v2 {
-    background-image: url(../images/home/home.jpg);
+    background-image: url(../images/home/home3.jpg);
 }
 
 #section4-v2 {
-    background-image: url(../images/home/home.jpg);
+    background-image: url(../images/home/home4.jpg);
 }
 
 .cover-titles {
@@ -792,7 +791,7 @@ nav ul ul ul li {
     font-size: 7rem;
     margin: 0;
     width: 100%;
-    letter-spacing: rem;
+    /*letter-spacing: rem;*/
     overflow: hidden;
     -webkit-text-shadow: 0 .3rem .9rem rgba(0, 0, 0, 0.4);
     text-shadow: 0 .3rem .9rem rgba(0, 0, 0, 0.4);
@@ -1233,7 +1232,6 @@ ul.comment-list {
 }
 
 .form-control {
-    box-shadow: none;
     border-radius: 0;
     border: solid .1rem #d9d9d9;
     -webkit-transition: all ease-in-out .2s;
