@@ -44,9 +44,9 @@
             <!-- Grid Item-->
             <% for (var i = 0; i < photos.length; i++) { %>
             <figure class="grid-item col-md-4 col-sm-4 col-xs-12">
-                <a href="/images/photos/<%= photos[i].name %>.jpg"
+                <a href="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>.jpg"
                    itemprop="contentUrl" data-size="<%= photos[i].size %>">
-                    <img src="/images/photos/<%= photos[i].name %>_thumb.jpg" alt="<%= photos[i].title %>"
+                    <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>_thumb.jpg" alt="<%= photos[i].title %>"
                          itemprop="thumb"/>
                 </a>
                 <figcaption itemprop="<%= photos[i].subtitle %>"><%= photos[i].title %></figcaption>

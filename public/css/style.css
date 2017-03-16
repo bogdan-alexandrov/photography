@@ -449,7 +449,7 @@ nav ul ul ul li {
     z-index: 101;
     text-align: right;
     /*background: #ef4138;*/
-    background: rgba(0,0,0,0.6);
+    background: rgba(0, 0, 0, 0.6);
     overflow: auto;
     padding: 2.4rem 2.6rem;
     opacity: 0;
@@ -458,12 +458,15 @@ nav ul ul ul li {
     transition: all ease-in-out 0.5s;
 }
 
-.mobile-menu  > div > i{ /*//button /// */
+.mobile-menu > div > i { /*//button /// */
     visibility: visible;
 
-}.mobile-menu-overlay.transition.visible > div > i{ /*//button X*/
+}
+
+.mobile-menu-overlay.transition.visible > div > i { /*//button X*/
     visibility: visible;
 }
+
 .mobile-menu-content {
     position: absolute;
     right: 2.6rem;
@@ -1313,9 +1316,8 @@ textarea.form-control {
     }
 
     /*.header {*/
-        /*height: 20rem;*/
+    /*height: 20rem;*/
     /*}*/
-
     .main-menu {
         padding: 0 3rem;
         margin: 2.5rem auto;

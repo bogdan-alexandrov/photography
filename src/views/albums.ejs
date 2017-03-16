@@ -40,9 +40,9 @@
             <!-- Grid Item-->
             <% for (var i = 0; i < albums.length; i++) { %>
             <div class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/albums/<%= albums[i].name %>">
+                <a href="<%= process.env.SITE_DOMAIN %>/albums/<%= albums[i].name %>">
                     <div class="hovereffect">
-                        <img src="/images/photos/<%= albums[i].selectedImg %>_thumb.jpg"
+                        <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= albums[i].selectedImg %>_thumb.jpg"
                              alt="<%= albums[i].name %>"
                         />
                         <div class="overlay">

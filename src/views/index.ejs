@@ -9,8 +9,8 @@
     <!--Facebook OG tags-->
     <meta property="og:title" content="<%= title %>"/>
     <meta property="og:type" content="website"/> <!--todo changeit for other pages -->
-    <meta property="og:url" content="https://bogi-photo.herokuapp.com/"/> <!--todo: parametrize it-->
-    <meta property="og:image" content="http://bogi-photo.herokuapp.com/images/home/home1.jpg"/>
+    <meta property="og:url" content="<%= process.env.SITE_DOMAIN %>"/> <!--todo: parametrize it-->
+    <meta property="og:image" content="<%= process.env.SITE_DOMAIN %>/images/home/home1.jpg"/>
     <!--todo change it according to the page-->
     <meta property="og:description" content="Welcome to my World of photography !">
 
