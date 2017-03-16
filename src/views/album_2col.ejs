@@ -20,8 +20,6 @@
         <div class="parallax" style="background-image: url(/images/headers/<%= album.name %>.jpg);">
             <div class="darker"></div>
         </div>
-        <div class="darker"></div>
-        </div>
         <!-- Main menu -->
         <%- include ./common/menu.ejs %>
         <!-- /Main menu -->
@@ -46,7 +44,8 @@
             <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
                 <a href="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>.jpg"
                    itemprop="contentUrl" data-size="<%= photos[i].size %>">
-                    <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>_thumb.jpg" alt="<%= photos[i].title %>"
+                    <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>_thumb.jpg"
+                         alt="<%= photos[i].title %>"
                          itemprop="thumb"/>
                 </a>
                 <figcaption itemprop="<%= photos[i].subtitle %>"><%= photos[i].title %></figcaption>

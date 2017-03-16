@@ -1,10 +1,17 @@
 <div class="main-menu">
+
+    <% if( typeof album != 'undefined') { %>
+    <div class="nav-back">
+        <i class="fa fa-angle-left fa-2x"></i>
+    </div>
+    <% } %>
+
     <nav id="menu" class="col-md-10 col-sm-10 cl-effect-4">
         <ul class="hidden-xs">
             <% for (var i = 0; i < nav.length; i++) { %>
             <li>
                 <!--class="menu-active"-->
-                <div style="position: relative;">
+                <div class="relative">
                     <a class="menu-link-item" href="<%= nav[i].link %>"><%= nav[i].title %></a>
                 </div>
                 <% if(nav[i].subItems != undefined) { %>

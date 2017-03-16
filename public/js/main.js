@@ -94,6 +94,12 @@ jQuery(function () {
             //Hide the other panels
             $(".mobile-submenu").not($(this).next()).slideUp('fast');
         });
+
+        $(".nav-back i").click(function(){
+            parent.history.back();
+            return false;
+        });
+
         /*==============================*/
         /* 06 - Back To Top Buttone*/
         /*==============================*/
