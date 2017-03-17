@@ -2,10 +2,13 @@
 <html>
 <head>
     <%- include common/head_commons.ejs %>
+
+    <!--META-->
+    <meta name="robots" content="noindex,nofollow"/>
+
 </head>
 <body>
 
-<!-- Container -->
 <main class="container">
 
     <!-- Mobile Menu -->
@@ -13,101 +16,36 @@
     <!-- /Mobile Menu -->
 
     <!-- Header -->
-    <header class="transition header">
-        <div class="parallax">
-            <div class="darker"></div>
-        </div>
-        <!-- Main menu -->
+    <header class="transition header fixed">
+        <!-- Menu -->
         <%- include ./common/menu.ejs %>
-        <!-- /Main menu -->
-        <div class="item-category">
-            <h1>404</h1>
-            <p>There are many variations of passages of Lorem Ipsum available</p>
-            <div class="border">
-                <div></div>
-            </div>
-        </div>
+        <!-- /Menu -->
     </header>
     <!-- /Header -->
 
-    <!--Content-->
-    <div class="content">
+    <!-- Content -->
+    <div class="container center error404">
+        <div class="dt fullscreen">
+            <div class="dtc">
+                <i class="fa fa-compass"></i>
 
-        <!-- Row-->
-        <div class="row">
-            <div class="contact-info col-sm-12">
-                <div class="col-sm-4">
-                    <h3>Here you find me</h3>
-                    <address>
-                        <p>57 Mainstreet, MainTower, Barcelona</p>
-                    </address>
-                </div>
-                <div class="col-sm-4">
-                    <div class="phone">
-                        <h3>Call Me</h3>
-                        <p>+99(004) 987-654-3210</p>
-                    </div>
-                </div>
-                <div class="col-sm-4">
-                    <div class="email">
-                        <h3>Write me a email</h3>
-                        <p>contact@mail.com</p>
-                    </div>
-                </div>
+                <h1>Error 404 - Page Not Found</h1>
+                <p>The page you were looking for wasn't found</p>
+                <a href="/" class="btn"><span>Back home</span></a>
             </div>
-
-            <!-- Contact us form -->
-            <div class="contact_form col-sm-12">
-                <div class="col-sm-12">
-                    <h3>send me a message</h3>
-                    <p>Nunc nec iaculis ipsum, a egestas ante. Duis ut ullamcorper ipsum. Etiam porttitor.</p>
-                </div>
-                <form id="validForm">
-                    <div class="form-group control-group col-sm-6">
-                        <span><i class="fa fa-user"></i></span>
-                        <input class="form-control" type="text" name="name" minlength="2" placeholder="Name *">
-                    </div>
-                    <div class="form-group control-group col-sm-6">
-                        <span><i class="fa fa-envelope-o"></i></span>
-                        <input class="form-control" type="email" name="email" placeholder="Email Address *">
-                    </div>
-                    <div class="form-group control-group col-sm-12">
-                        <span><i class="fa fa-pencil"></i></span>
-                        <textarea class="form-control" type="text" name="message" placeholder="Message *"></textarea>
-                    </div>
-                    <div class="form-button col-xs-12">
-                        <button type="submit" name="enter" class="btn center-block">
-                            send <i class="fa fa-paper-plane"></i>
-                        </button>
-                    </div>
-                </form>
-            </div>
-            <!-- /Contact us form -->
         </div>
-        <!-- /Row -->
-
-        <!-- Footer -->
-        <%- include ./common/footer.ejs%>
-
     </div>
     <!-- /Content -->
 
+    <!-- Footer -->
+    <footer id="footer" class="fixed white">
+        <p>&copy; Bogdan Alexandrov 2017. All rights reserved.</p>
+    </footer>
+    <!-- /Footer -->
 </main>
-<!-- /Container -->
-
-<!-- JS -->
 
 <!-- jquery-1.11.3.min js -->
 <script type="text/javascript" src="/js/jquery-1.11.3.min.js"></script>
-
-<!-- Plugins -->
-<script type="text/javascript" src="/js/jquery.fullPage.min.js"></script>
-<script type="text/javascript" src="/js/imagesloaded.min.js"></script>
-<script type="text/javascript" src="/js/masonry.​min.js"></script>
-<script type="text/javascript" src="/js/jquery.validate.min.js"></script>
-<script type="text/javascript" src="/js/website-smooth-scroll.js"></script>
-<script type="text/javascript" src="/js/photoswipe.min.js"></script>
-<script type="text/javascript" src="/js/photoswipe-ui-default.min.js"></script>
 
 <!-- Main js -->
 <script type="text/javascript" src="/js/main.js"></script>

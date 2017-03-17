@@ -61,7 +61,7 @@ var controller = function (nav, mcache) {
     var notFound = function (req, res) {
         res.status(404).render('404', {
             nav: nav,
-            title: 'Contact - Bogdan Alexandrov Photography'
+            title: 'Page not found - Bogdan Alexandrov Photography'
         });
     };
 

@@ -20,7 +20,10 @@ Author:     madsparrow
     10. FORMS
     11. FOOTER
     12. RESPONSIVE
-    
+    13. GALLERYs effects
+    14. CUSTOMIZATIONS
+    15. 404 PAGE
+
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     text: #666
     hover: #ef4138
@@ -135,8 +138,27 @@ blockquote {
     color: #666;
 }
 
-.relative{
+.relative {
     position: relative;
+}
+
+.center {
+    text-align: center;
+}
+
+.dt {
+    display: table;
+    width: 100%;
+}
+
+.dtc {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.fullscreen {
+    height: 100vh;
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -692,8 +714,7 @@ nav ul ul ul li {
 }
 
 #section2 {
-    background-image: url(../images/home/home2.jpg);
-    background-position: 70%;
+    background: url(../images/home/home2.jpg) 70%;
 }
 
 #section3 {
@@ -1640,4 +1661,27 @@ textarea.form-control {
 /*-----------------------------------------------------------------------------------*/
 .pswp__caption__center {
     text-align: center !important;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/*  15. 404 error page
+/*-----------------------------------------------------------------------------------*/
+
+.error404 {
+    background-size: cover;
+    background: url(/images/error404.jpg) no-repeat center center;
+}
+
+.error404 h1 {
+    font-size: 3rem;
+}
+
+.error404 i {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.error404 a {
+    margin-top: 30px;
 }
