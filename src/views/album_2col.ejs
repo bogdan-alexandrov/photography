@@ -2,9 +2,11 @@
 <html>
 <head>
     <!--SEO-->
-    <!--<link rel="canonical" href="<%= process.env.SITE_DOMAIN %>/album/<%= album.name %>"/>-->
-
     <%- include common/head_commons.ejs %>
+    <!--CSS Plugins-->
+    <link rel="stylesheet" href="/css/photoswipe.min.css">
+    <link rel="stylesheet" href="/css/default-skin/default-skin.css">
+
 </head>
 <body>
 
@@ -120,6 +122,15 @@
 
 <!-- JS -->
 <%- include ./common/javascript.ejs %>
+<!-- Plugins -->
+<!--<script type="text/javascript" src="/js/jquery.fullPage.min.js"></script>-->
+<script type="text/javascript" src="/js/imagesloaded.min.js"></script>
+<script type="text/javascript" src="/js/masonry.​min.js"></script>
+<script type="text/javascript" src="/js/website-smooth-scroll.min.js"></script>
+<script type="text/javascript" src="/js/photoswipe.min.js"></script>
+<script type="text/javascript" src="/js/photoswipe-ui-default.min.js"></script>
+<!-- Main js -->
+<script type="text/javascript" src="/js/main.js"></script>
 
 </body>
 </html>

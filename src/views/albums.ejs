@@ -3,9 +3,8 @@
 
 <head>
     <!--SEO-->
-    <!--<link rel="canonical" href="<%= process.env.SITE_DOMAIN %>/albums"/>-->
-    <meta name="description" content="Bogdan Alexandrov Photography albums - Paris, black and white photos, cityscapes, animals ..."/>
-
+    <meta name="description"
+          content="Bogdan Alexandrov Photography albums - Paris, black and white photos, cityscapes, animals ..."/>
     <%- include common/head_commons.ejs %>
 </head>
 
@@ -18,8 +17,7 @@
     <!-- /Mobile Menu -->
     <!-- Header -->
     <header class="transition header">
-        <div class="parallax"
-             style="background-image: url(/images/headers/gallery.jpg);"        >
+        <div class="parallax gallery-header">
             <div class="darker"></div>
         </div>
         <!-- Main menu -->
@@ -110,7 +108,7 @@
         <!-- /Back to top button -->
 
         <!-- Footer -->
-        <%- include ./common/footer.ejs%>
+        <%- include ./common/footer.ejs %>
 
     </div>
     <!-- /Content -->
@@ -118,7 +116,13 @@
 <!-- /Container -->
 
 <!-- JS -->
-<%- include ./common/javascript.ejs%>
-</body>
+<%- include ./common/javascript.ejs %>
+<!-- Plugins-->
+<script type="text/javascript" src="/js/imagesloaded.min.js"></script>
+<script type="text/javascript" src="/js/masonry.​min.js"></script>
+<script type="text/javascript" src="/js/website-smooth-scroll.min.js"></script>
+<!-- Main js -->
+<script type="text/javascript" src="/js/main.js"></script>
 
+</body>
 </html>
