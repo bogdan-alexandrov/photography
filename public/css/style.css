@@ -714,7 +714,8 @@ nav ul ul ul li {
 }
 
 #section2 {
-    background: url(../images/home/home2.jpg) 70%;
+    background-image: url(../images/home/home2.jpg);
+    background-position: 70%;
 }
 
 #section3 {
