@@ -7,25 +7,25 @@ var initalAlbums = [
         title: 'Paris',
         subtitle: 'The most beautiful city',
         name: 'paris',
-        template: 'album_2col.ejs',
+        templateColSize: 2,
         selectedImg: 'under-the-bridge'
     }, {
         title: 'Paris B & W',
         subtitle: 'Black and white version',
         name: 'paris-bnw',
-        template: 'album_3col.ejs',
+        templateColSize: 3,
         selectedImg: 'notre-dame'
     }, {
         title: 'Animals',
         subtitle: 'Living creatures',
         name: 'animals',
-        template: 'album_2col.ejs',
+        templateColSize: 2,
         selectedImg: 'can-you-see-me'
     }, {
         title: 'Crystal ball',
         subtitle: 'Let\'s walk around',
         name: 'crystal-ball',
-        template: 'album_2col.ejs',
+        templateColSize: 2,
         selectedImg: 'ball2'
     }
 ];
@@ -99,8 +99,8 @@ var adminService = function () {
             var collection = db.collection('albums');
             collection.insertMany(initalAlbums, function (err, results) {
                 db.close();
+                cb();
             });
-            cb();
         });
     };
 
@@ -109,24 +109,40 @@ var adminService = function () {
             var collection = db.collection('photos');
             collection.insertMany(initalPhotos, function (err, results) {
                 db.close();
+                cb();
             });
-            cb();
         });
     };
 
     var deleteAllAlbums = function (cb) {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('albums');
-            collection.removeMany({});
-            cb();
-        });
+            collection.removeMany({}, function (err, results) {
+                db.close();
+                cb();
+            });
+        })
     };
 
     var deleteAllPhotos = function (cb) {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('photos');
-            collection.removeMany({});
-            cb();
+            collection.removeMany({}, function (err, results) {
+                db.close();
+                cb();
+            });
+        });
+    };
+
+    var reset = function (cb) {
+        deleteAllAlbums(function () {
+            initAlbums(function () {
+                deleteAllPhotos(function () {
+                    initPhotos(function () {
+                        cb();
+                    })
+                })
+            })
         });
     };
 
@@ -134,7 +150,8 @@ var adminService = function () {
         initAlbums: initAlbums,
         initPhotos: initPhotos,
         deleteAllAlbums: deleteAllAlbums,
-        deleteAllPhotos: deleteAllPhotos
+        deleteAllPhotos: deleteAllPhotos,
+        reset: reset
     };
 };
 

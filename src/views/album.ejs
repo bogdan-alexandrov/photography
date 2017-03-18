@@ -2,6 +2,7 @@
 <html>
 <head>
     <!--SEO-->
+
     <%- include common/head_commons.ejs %>
     <!--CSS Plugins-->
     <link rel="stylesheet" href="/css/photoswipe.min.css">
@@ -41,9 +42,13 @@
         <!-- Row-->
         <div class="masonry gallery row">
 
+            <!--Col Size-->
+            <% var colMd = 'col-md-' + 12 / album.templateColSize; %>
+            <% var colSm = 'col-sm-' + 12 / album.templateColSize; %>
+
             <!-- Grid Item-->
             <% for (var i = 0; i < photos.length; i++) { %>
-            <figure class="grid-item col-md-6 col-sm-6 col-xs-12">
+            <figure class="grid-item  <%= colMd %> <%= colSm %> col-xs-12">
                 <a href="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>.jpg"
                    itemprop="contentUrl" data-size="<%= photos[i].size %>">
                     <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>_thumb.jpg"

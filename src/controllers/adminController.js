@@ -31,11 +31,18 @@ var albumController = function (adminService, nav) {
         });
     };
 
+    var reset = function (req, res) {
+        adminService.reset(function () {
+            res.send('All done ! ');
+        });
+    };
+
     return {
         deleteAllPhotos: deleteAllPhotos,
         deleteAllAlbums: deleteAllAlbums,
         initPhotos: initPhotos,
         initAlbums: initAlbums,
+        reset: reset,
         middleware: middleware
     };
 };

@@ -16,6 +16,8 @@ var router = function (nav) {
         .get(controller.deleteAllPhotos);
     adminRouter.route('/init/photos')
         .get(controller.initPhotos);
+    adminRouter.route('/reset')
+        .get(controller.reset);
 
     return adminRouter;
 };

@@ -34,7 +34,7 @@ var albumController = function (albumService, nav, mcache) {
     var getByName = function (req, res) {
         albumService.getByName(req.params.name, function (album) {
             albumService.getAlbumPhotos(album, function (photos) {
-                res.render(album.template, {
+                res.render('album', {
                     nav: nav,
                     title: album.title + ' - Bogdan Alexandrov Photography',
                     photos: photos,
