@@ -10,7 +10,7 @@ var compression = require('compression');
 var app = express();
 var port = process.env.PORT || 5000;
 
-// BODYPARSER
+// BODY-PARSER
 app.use(bodyParser.urlencoded({extended: true}));
 
 // GZIP
@@ -46,12 +46,16 @@ app.set('view engine', 'ejs');
 
 // ROUTES
 var nav = require('./src/services/navigation.js')();
-var adminRouter = require('./src/routes/adminRoutes.js')(nav);
 var albumsRouter = require('./src/routes/albumRoutes.js')(nav, mcache);
 var seoRouter = require('./src/routes/seoRoutes.js')();
 var contactRouter = require('./src/routes/commonRoutes.js')(nav, mcache);
+
+if (process.env.NODE_ENV !== 'production') {
+    var adminRouter = require('./src/routes/adminRoutes.js')(nav);
+    app.use('/admin', adminRouter);
+}
+
 app.use('/albums', albumsRouter);
-app.use('/admin', adminRouter);
 app.use('/', seoRouter);
 app.use('/', contactRouter);
 
