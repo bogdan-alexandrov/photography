@@ -38,7 +38,7 @@ var initalAlbums = [
         subtitle: 'Everything else',
         name: 'others',
         templateColSize: 3,
-        selectedImg: 'mont-saint-michel'
+        selectedImg: 'the-beach-2'
     }, {
         title: 'Crystal ball',
         subtitle: 'Let\'s walk around',
@@ -132,7 +132,7 @@ var animals = [
         subtitle: 'SMENIGO',
         name: 'leopard-gecko',
         album: 'animals',
-        size: '798hx200'
+        size: '798hx1200'
     }, {
         title: 'CHANGEIT',
         subtitle: 'SMENIGO',
@@ -265,19 +265,19 @@ var bnw = [
     }, {
         title: 'CHANGEIT',
         subtitle: 'SMENIGO',
-        name: 'crystall-ball-eiffel-bnw',
+        name: 'crystal-ball-eiffel-bnw',
         album: 'bnw',
         size: '1200x798'
     }, {
         title: 'CHANGEIT',
         subtitle: 'SMENIGO',
-        name: 'crystall-ball-eiffel-bnw2',
+        name: 'crystal-ball-eiffel-bnw2',
         album: 'bnw',
         size: '1200x798'
     }, {
         title: 'CHANGEIT',
         subtitle: 'SMENIGO',
-        name: 'crystall-ball-eiffel-bnw3',
+        name: 'crystal-ball-eiffel-bnw3',
         album: 'bnw',
         size: '1200x798'
     }, {
@@ -363,7 +363,7 @@ var bnw = [
         subtitle: 'SMENIGO',
         name: 'stormtrooper',
         album: 'bnw',
-        size: '914h1200'
+        size: '914x1200'
     }
 ];
 var cityscapes = [
