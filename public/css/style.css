@@ -1577,9 +1577,10 @@ textarea.form-control {
 /*  13. GALLERYs
 /*-----------------------------------------------------------------------------------*/
 
-.gallery-header{
+.gallery-header {
     background-image: url(/images/headers/gallery.jpg);
 }
+
 .hovereffect {
     width: 100%;
     height: 100%;
@@ -1673,8 +1674,11 @@ textarea.form-control {
 /*-----------------------------------------------------------------------------------*/
 
 .error404 {
+    background: url(/images/error404.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
     background-size: cover;
-    background: url(/images/error404.jpg) no-repeat center center;
 }
 
 .error404 h1 {
