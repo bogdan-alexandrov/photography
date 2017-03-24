@@ -29,7 +29,7 @@ var albumService = function () {
     var getAlbumPhotos = function (album, cb) {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('photos');
-            collection.find({album: {$regex: ".*" + album.name + ".*"}}).toArray(
+            collection.find({categories: {$regex: ".*" + album.name + ".*"}}).toArray(
                 function (err, results) {
                     cb(results);
                 }

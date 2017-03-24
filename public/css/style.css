@@ -424,6 +424,7 @@ nav ul ul ul li {
 .nav-back {
     display: inline-block;
     cursor: pointer;
+    color: white;
 }
 
 #logo {
