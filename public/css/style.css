@@ -588,6 +588,14 @@ nav ul ul ul li {
     margin: 5rem 0 0 0;
 }
 
+.aboutMeHeader {
+    background-image: url(../images/headers/about.jpg);
+}
+
+.contactMeHeader {
+    background-image: url(../images/headers/contact.jpg);
+}
+
 /*Border bottom parallax*/
 
 .item-category .border div {
