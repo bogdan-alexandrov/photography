@@ -61,13 +61,14 @@
         <!-- /Row -->
 
         <!-- Load more button -->
-        <% if (currPage < totalPages ) { %>
-        <div class="load-more" id="nextPage">
-            <a href="/albums/<%= album.name %>?page=<%= i %>" class="btn">
-                load more<i class="fa fa-angle-down fa-lg"></i>
-            </a>
+        <div class="load-more">
+            <% var nextClass = "nextPage" %>
+            <% for (var i = ++currPage; i <= totalPages; i++) { %>
+            <a href="/albums/<%= album.name %>?page=<%= i %>" class="<%= nextClass %>"></a>
+            <% nextClass = ""; %>
+            <% } %>
         </div>
-        <% } %>
+
         <!-- /Load more button -->
 
         <!-- Root element of PhotoSwipe. Must have class pswp. -->

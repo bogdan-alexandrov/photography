@@ -67,14 +67,16 @@ jQuery(function () {
                     });
                 }
 
-                setTimeout(animate, 100);
+                setTimeout(animate, 0);
 
                 // AJAX loading
                 var ias = jQuery.ias({
                     container: '.masonry',
                     item: '.grid-item',
                     pagination: '.load-more',
-                    next: '#nextPage'
+                    next: '.nextPage',
+                    negativeMargin: 200,
+                    delay: 0
                 });
 
                 var $grid = $('.masonry');
@@ -82,15 +84,8 @@ jQuery(function () {
                 ias.on('rendered', function (items) {
                     $grid.masonry('appended', items);
                     $grid.masonry('reloadItems');
-                    setTimeout(animate, 100);
+                    setTimeout(animate, 0);
                 });
-                // // Add a loader image which is displayed during loading
-                // ias.extension(new IASSpinnerExtension());
-                // Add a link after page 2 which has to be clicked to load the next page
-                // ias.extension(new IASTriggerExtension({offset: 1}));
-                // // Add a text when there are no more pages left to load
-                // ias.extension(new IASNoneLeftExtension({text: "You reached the end"}));
-
                 // /AJAX loading
 
             });

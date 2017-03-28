@@ -34,14 +34,15 @@ var albumController = function (albumService, nav, mcache) {
     var getByName = function (req, res) {
         albumService.getByName(req.params.name, function (album) {
             albumService.getAlbumPhotosCount(album, function (numberOfPhotos) {
-                albumService.getAlbumPhotos(album, req.query.page, function (photos) {
+                    var pagenum = req.query.page == 0 || req.query.page == undefined ? 1 : req.query.page;
+                albumService.getAlbumPhotos(album, pagenum, function (photos) {
                     res.render('album', {
                         nav: nav,
                         title: album.title + ' - Bogdan Alexandrov Photography',
                         photos: photos,
                         album: album,
-                        currPage: req.query.pageNum,
-                        totalPages: Math.floor(numberOfPhotos/10 + 1)
+                        currPage: pagenum,
+                        totalPages: Math.ceil(numberOfPhotos/15)
                     }, function (err, html) {
                         putInCache(req, res, html);
                     });

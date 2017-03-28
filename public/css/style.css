@@ -233,12 +233,19 @@ blockquote {
 }
 
 /*Load more*/
-
 .load-more {
     text-align: center;
     width: 100%;
     display: inline-block;
     padding-top: 5rem;
+
+}
+
+.load-morea{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 /* Top buttone */

@@ -29,8 +29,9 @@ var albumService = function () {
     var getAlbumPhotos = function (album, pageNum, cb) {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('photos');
+            var nbrPerPage = 15;
             collection.find({categories: {$regex: ".*" + album.name + ".*"}})
-                .skip((pageNum - 1) * 10).limit(10)
+                .skip((pageNum - 1) * nbrPerPage).limit(nbrPerPage)
                 .toArray(function (err, results) {
                     cb(results);
                 });
