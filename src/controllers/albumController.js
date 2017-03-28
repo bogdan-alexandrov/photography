@@ -33,14 +33,18 @@ var albumController = function (albumService, nav, mcache) {
 
     var getByName = function (req, res) {
         albumService.getByName(req.params.name, function (album) {
-            albumService.getAlbumPhotos(album, function (photos) {
-                res.render('album', {
-                    nav: nav,
-                    title: album.title + ' - Bogdan Alexandrov Photography',
-                    photos: photos,
-                    album: album
-                }, function (err, html) {
-                    putInCache(req, res, html);
+            albumService.getAlbumPhotosCount(album, function (numberOfPhotos) {
+                albumService.getAlbumPhotos(album, req.query.page, function (photos) {
+                    res.render('album', {
+                        nav: nav,
+                        title: album.title + ' - Bogdan Alexandrov Photography',
+                        photos: photos,
+                        album: album,
+                        currPage: req.query.pageNum,
+                        totalPages: Math.floor(numberOfPhotos/10 + 1)
+                    }, function (err, html) {
+                        putInCache(req, res, html);
+                    });
                 });
             });
         });

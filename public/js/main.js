@@ -46,26 +46,56 @@ jQuery(function () {
         /*==============================*/
         /* 03 - Masonry plugin */
         /*==============================*/
+
         if ($.exists('.masonry')) {
             var $container = $('.masonry');
             $container.imagesLoaded(function () {
                 $container.masonry({
-                    itemSelector: '.grid-item, .blog-item',
+                    itemSelector: '.grid-item',
                     normalScrollElements: '.mobile-menu-overlay',
                     percentPosition: true
                 });
+
                 function animate() {
-                    $('.row img, .post-info').each(function (i) {
+                    $('.row img.justAdded , .post-info').each(function (i) {
                         (function (self, j) {
                             setTimeout(function () {
+                                $(self).removeClass('justAdded');
                                 $(self).addClass('fadeInUp animated');
                             }, (j * 150) + 150);
                         })(this, i);
                     });
                 }
 
-                setTimeout(animate, 700);
+                setTimeout(animate, 100);
+
+                // AJAX loading
+                var ias = jQuery.ias({
+                    container: '.masonry',
+                    item: '.grid-item',
+                    pagination: '.load-more',
+                    next: '#nextPage'
+                });
+
+                var $grid = $('.masonry');
+
+                ias.on('rendered', function (items) {
+                    $grid.masonry('appended', items);
+                    $grid.masonry('reloadItems');
+                    setTimeout(animate, 100);
+                });
+                // // Add a loader image which is displayed during loading
+                // ias.extension(new IASSpinnerExtension());
+                // Add a link after page 2 which has to be clicked to load the next page
+                // ias.extension(new IASTriggerExtension({offset: 1}));
+                // // Add a text when there are no more pages left to load
+                // ias.extension(new IASNoneLeftExtension({text: "You reached the end"}));
+
+                // /AJAX loading
+
             });
+
+
         }
         /*==============================*/
         /* 04 - Parallax */
@@ -342,4 +372,4 @@ jQuery(function () {
             });
         }
     });
-})
+});

@@ -26,20 +26,33 @@ var albumService = function () {
         });
     };
 
-    var getAlbumPhotos = function (album, cb) {
+    var getAlbumPhotos = function (album, pageNum, cb) {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('photos');
-            collection.find({categories: {$regex: ".*" + album.name + ".*"}}).toArray(
-                function (err, results) {
+            collection.find({categories: {$regex: ".*" + album.name + ".*"}})
+                .skip((pageNum - 1) * 10).limit(10)
+                .toArray(function (err, results) {
                     cb(results);
-                }
-            );
+                });
+        });
+    };
+
+    var getAlbumPhotosCount = function (album, cb) {
+        mongodb.connect(url, function (err, db) {
+            var collection = db.collection('photos');
+            collection.count(
+                {
+                    categories: {$regex: ".*" + album.name + ".*"}
+                }, function (err, results) {
+                    cb(results);
+                });
         });
     };
 
     return {
         getAll: getAll,
         getAlbumPhotos: getAlbumPhotos,
+        getAlbumPhotosCount: getAlbumPhotosCount,
         getByName: getByName
     };
 };

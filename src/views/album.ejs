@@ -41,7 +41,6 @@
 
         <!-- Row-->
         <div class="masonry gallery row">
-
             <!--Col Size-->
             <% var colMd = 'col-md-' + 12 / album.templateColSize; %>
             <% var colSm = 'col-sm-' + 12 / album.templateColSize; %>
@@ -53,7 +52,7 @@
                    itemprop="contentUrl" data-size="<%= photos[i].size %>">
                     <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= photos[i].name %>_thumb.jpg"
                          alt="<%= photos[i].subtitle %>"
-                         itemprop="thumb"/>
+                         itemprop="thumb" class="justAdded"/>
                 </a>
                 <figcaption itemprop="<%= photos[i].subtitle %>"><%= photos[i].title %></figcaption>
             </figure>
@@ -62,11 +61,14 @@
         <!-- /Row -->
 
         <!-- Load more button -->
-        <div class="load-more">
-            <a href="#" class="btn">load more <i class="fa fa-angle-down fa-lg"></i></a>
+        <% if (currPage < totalPages ) { %>
+        <div class="load-more" id="nextPage">
+            <a href="/albums/<%= album.name %>?page=<%= i %>" class="btn">
+                load more<i class="fa fa-angle-down fa-lg"></i>
+            </a>
         </div>
+        <% } %>
         <!-- /Load more button -->
-
 
         <!-- Root element of PhotoSwipe. Must have class pswp. -->
         <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
@@ -138,6 +140,7 @@
 <!--<script type="text/javascript" src="/js/jquery.fullPage.min.js"></script>-->
 <script type="text/javascript" src="/js/imagesloaded.min.js"></script>
 <script type="text/javascript" src="/js/masonry.​min.js"></script>
+<script type="text/javascript" src="/js/jquery-ias.min.js"></script>
 <script type="text/javascript" src="/js/website-smooth-scroll.min.js"></script>
 <script type="text/javascript" src="/js/photoswipe.min.js"></script>
 <script type="text/javascript" src="/js/photoswipe-ui-default.min.js"></script>
