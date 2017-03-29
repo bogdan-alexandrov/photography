@@ -20,7 +20,7 @@ var adminService = function () {
     var initPhotos = function (cb) {
         mongodb.connect(url, function (err, db) {
             var collection = db.collection('photos');
-            collection.insertMany(photos, function (err, results) {
+            collection.insertMany(photos.reverse(), function (err, results) {
                 db.close();
                 cb();
             });

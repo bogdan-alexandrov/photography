@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="/css/photoswipe.min.css">
     <link rel="stylesheet" href="/css/default-skin/default-skin.css">
 
+    <!--OG tags-->
+    <meta property="og:url" content="<%= process.env.SITE_DOMAIN + '/albums' %>">
+    <meta property="og:image" content="<%= process.env.SITE_DOMAIN + '/photos/headers/gallery.jpg' %>"/>
+    <meta name="twitter:image" content="<%= process.env.SITE_DOMAIN + '/photos/headers/gallery.jpg' %>"/>
+    <meta property="og:description" content="Albums - Bogdan Alexandrov Photography !">
+    <meta name="twitter:description" content="Albums - Bogdan Alexandrov Photography !">
+    <!-- /OG tags-->
+
+    <meta name="keywords" content="albums, gallery, galleries, photos"/>
+
 </head>
 
 <body>
@@ -46,8 +56,7 @@
                 <a href="<%= process.env.SITE_DOMAIN %>/albums/<%= albums[i].name %>">
                     <div class="hovereffect">
                         <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= albums[i].selectedImg %>_thumb.jpg"
-                             class="justAdded" alt="<%= albums[i].subtitle %>"
-                        />
+                             class="justAdded" alt="<%= albums[i].subtitle %>"/>
                         <div class="overlay">
                             <h2><%= albums[i].title %></h2>
                             <p><%= albums[i].subtitle %></p>
