@@ -110,6 +110,10 @@ blockquote {
     color: #ef4138;
 }
 
+.center-block{
+    float: none;
+}
+
 .container {
     width: 100%;
     padding: 0;
@@ -248,7 +252,15 @@ blockquote {
     right: 0;
 }
 
-/* Top buttone */
+.fa-spinner {
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* Top button */
 
 .back-top {
     display: inline-block;
