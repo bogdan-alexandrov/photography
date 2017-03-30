@@ -300,7 +300,7 @@ jQuery(function () {
                         options.showAnimationDuration = 0;
                     }
                     // options
-                    options.history = false;
+                    options.history = true;
                     options.bgOpacity = 0.8;
                     // Pass data to PhotoSwipe and initialize it
                     gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
