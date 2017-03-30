@@ -75,7 +75,7 @@ jQuery(function () {
                     item: '.grid-item',
                     pagination: '.load-more',
                     next: '.nextPage',
-                    negativeMargin: 200,
+                    negativeMargin: 0,
                     delay: 700
                 });
 
@@ -89,7 +89,7 @@ jQuery(function () {
 
                 // Add a loader image which is displayed during loading
                 ias.extension(new IASSpinnerExtension({
-                        html: '<i class="fa fa-2x fa-spin fa-spinner" aria-hidden="true"></i>'
+                        html: '<div class="spinner-container"><i class="fa fa-2x fa-spin fa-spinner" aria-hidden="true"></i></div>'
                     }
                 ));
                 // Add a link after page 2 which has to be clicked to load the next page
