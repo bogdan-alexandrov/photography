@@ -82,9 +82,11 @@ jQuery(function () {
                 var $grid = $('.masonry');
 
                 ias.on('rendered', function (items) {
-                    $grid.masonry('appended', items);
-                    $grid.masonry('reloadItems');
-                    setTimeout(animate, 0);
+                    $container.imagesLoaded(function () {
+                        $grid.masonry('appended', items);
+                        $grid.masonry('reloadItems');
+                        setTimeout(animate, 0);
+                    })
                 });
 
                 // Add a loader image which is displayed during loading
