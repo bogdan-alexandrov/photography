@@ -76,7 +76,7 @@ jQuery(function () {
                     pagination: '.load-more',
                     next: '.nextPage',
                     negativeMargin: 0,
-                    delay: 700
+                    delay: 200
                 });
 
                 var $grid = $('.masonry');
