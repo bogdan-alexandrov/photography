@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Paris",
+    "subtitle": "The most beautiful city",
+    "name": "paris",
+    "templateColSize": 3,
+    "selectedImg": "the-boat"
+  },
+  {
+    "title": "Black & White",
+    "subtitle": "Black and white photography",
+    "name": "bnw",
+    "templateColSize": 3,
+    "selectedImg": "doggy"
+  },
+  {
+    "title": "Animals",
+    "subtitle": "Living creatures",
+    "name": "animals",
+    "templateColSize": 3,
+    "selectedImg": "chameleon"
+  },
+  {
+    "title": "Cityscapes",
+    "subtitle": "Cities",
+    "name": "cityscapes",
+    "templateColSize": 2,
+    "selectedImg": "strasbourg-2"
+  },
+  {
+    "title": "Crystal ball",
+    "subtitle": "Let's walk around",
+    "name": "crystal-ball",
+    "templateColSize": 2,
+    "selectedImg": "crystal-metro"
+  },
+  {
+    "title": "Miscellaneous",
+    "subtitle": "Everything else",
+    "name": "misc",
+    "templateColSize": 3,
+    "selectedImg": "the-beach-2"
+  }
+]

@@ -46,26 +46,63 @@ jQuery(function () {
         /*==============================*/
         /* 03 - Masonry plugin */
         /*==============================*/
+
         if ($.exists('.masonry')) {
             var $container = $('.masonry');
             $container.imagesLoaded(function () {
                 $container.masonry({
-                    itemSelector: '.grid-item, .blog-item',
+                    itemSelector: '.grid-item',
                     normalScrollElements: '.mobile-menu-overlay',
                     percentPosition: true
                 });
+
                 function animate() {
-                    $('.row img, .post-info').each(function (i) {
+                    $('.row img.justAdded , .post-info').each(function (i) {
                         (function (self, j) {
                             setTimeout(function () {
+                                $(self).removeClass('justAdded');
                                 $(self).addClass('fadeInUp animated');
                             }, (j * 150) + 150);
                         })(this, i);
                     });
                 }
 
-                setTimeout(animate, 700);
+                setTimeout(animate, 0);
+
+                // AJAX loading
+                var ias = jQuery.ias({
+                    container: '.masonry',
+                    item: '.grid-item',
+                    pagination: '.load-more',
+                    next: '.nextPage',
+                    negativeMargin: 0,
+                    delay: 200
+                });
+
+                var $grid = $('.masonry');
+
+                ias.on('rendered', function (items) {
+                    $container.imagesLoaded(function () {
+                        $grid.masonry('appended', items);
+                        $grid.masonry('reloadItems');
+                        setTimeout(animate, 0);
+                    })
+                });
+
+                // Add a loader image which is displayed during loading
+                ias.extension(new IASSpinnerExtension({
+                        html: '<div class="spinner-container"><i class="fa fa-2x fa-spin fa-spinner" aria-hidden="true"></i></div>'
+                    }
+                ));
+                // Add a link after page 2 which has to be clicked to load the next page
+                // ias.extension(new IASTriggerExtension({offset: 1}));
+                // // Add a text when there are no more pages left to load
+                // ias.extension(new IASNoneLeftExtension({text: "You reached the end"}));
+
+
             });
+
+
         }
         /*==============================*/
         /* 04 - Parallax */
@@ -86,6 +123,7 @@ jQuery(function () {
         /* 05 - Mobile Menu Navigation */
         /*==============================*/
         $('.mobile-menu i').on('click', function () {
+            $('.mobile-menu .fa-bars').toggleClass('hidden');
             $('.mobile-menu-overlay').toggleClass('visible');
         });
         $('.mobile-menu-overlay').find('.dropdown').on('click', function () {
@@ -93,6 +131,7 @@ jQuery(function () {
             //Hide the other panels
             $(".mobile-submenu").not($(this).next()).slideUp('fast');
         });
+
         /*==============================*/
         /* 06 - Back To Top Buttone*/
         /*==============================*/
@@ -263,7 +302,7 @@ jQuery(function () {
                         options.showAnimationDuration = 0;
                     }
                     // options
-                    options.history = false;
+                    options.history = true;
                     options.bgOpacity = 0.8;
                     // Pass data to PhotoSwipe and initialize it
                     gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
@@ -313,13 +352,13 @@ jQuery(function () {
                     },
                     email: {
                         required: "<i class='fa fa-times-circle'></i>Please enter your email",
-                        email: "<i class='fa fa-times-circle'></i>Please enter a valid email address.",
+                        email: "<i class='fa fa-times-circle'></i>Please enter a valid email address."
                     },
                     message: {
                         required: "<i class='fa fa-times-circle'></i>Please write me message",
                         minlength: "<i class='fa fa-times-circle'></i>Your message must consist of at least 16 characters",
-                        maxlength: "<i class='fa fa-times-circle'></i>The maximum number of characters - 100 ",
-                    },
+                        maxlength: "<i class='fa fa-times-circle'></i>The maximum number of characters - 100 "
+                    }
                 },
                 submitHandler: function (form) {
                     $.ajax({
@@ -340,4 +379,4 @@ jQuery(function () {
             });
         }
     });
-})
+});

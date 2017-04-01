@@ -18,8 +18,8 @@ var service = function () {
             subject: '[PHOTOGRAPHY] - new email form ' + fromName
         }, function (err, message) {
             console.log(err || message);
+            callback();
         });
-        callback();
     };
 
     return {

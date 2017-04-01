@@ -20,7 +20,10 @@ Author:     madsparrow
     10. FORMS
     11. FOOTER
     12. RESPONSIVE
-    
+    13. GALLERYs effects
+    14. CUSTOMIZATIONS
+    15. 404 PAGE
+
     font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
     text: #666
     hover: #ef4138
@@ -107,6 +110,10 @@ blockquote {
     color: #ef4138;
 }
 
+.center-block{
+    float: none;
+}
+
 .container {
     width: 100%;
     padding: 0;
@@ -115,6 +122,7 @@ blockquote {
 .content {
     background-image: url(../images/bg.png);
     min-height: 100%;
+    height:100vh;
 }
 
 .darker {
@@ -135,6 +143,29 @@ blockquote {
     color: #666;
 }
 
+.relative {
+    position: relative;
+}
+
+.center {
+    text-align: center;
+}
+
+.dt {
+    display: table;
+    width: 100%;
+}
+
+.dtc {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+.fullscreen {
+    height: 100vh;
+}
+
 /*-----------------------------------------------------------------------------------*/
 
 /*  02. BUTTON
@@ -143,7 +174,6 @@ blockquote {
 .btn {
     padding: 1rem 2rem;
     position: relative;
-    border: none;
     opacity: 0;
     z-index: 1;
     background: none;
@@ -208,15 +238,30 @@ blockquote {
 }
 
 /*Load more*/
-
 .load-more {
     text-align: center;
     width: 100%;
     display: inline-block;
     padding-top: 5rem;
+
 }
 
-/* Top buttone */
+.load-morea{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.spinner-container {
+    position: absolute;
+    text-align: center;
+    bottom: -25px;
+    left: 0;
+    right: 0;
+}
+
+/* Top button */
 
 .back-top {
     display: inline-block;
@@ -318,9 +363,14 @@ nav a {
     text-shadow: 0 .1rem .1rem rgba(0, 0, 0, 0.5);
 }
 
-nav a:hover {
-    color: black;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+ul > li > div > a {
+    font-size: 1.35em;
+}
+
+ul > li > div > a:hover {
+    color: white;
+    /*text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;*/
+    /*border-bottom-style: inset;*/
 }
 
 /* Hide Dropdowns by Default */
@@ -365,7 +415,8 @@ nav ul ul li a {
 }
 
 nav ul ul li a:hover {
-    color: #ef4138 !important;
+    color: rgba(0, 0, 0, 0.6) !important;
+    font-weight: bold;
 }
 
 /* Second, Third and more Tiers */
@@ -388,6 +439,12 @@ nav ul ul ul li {
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#a6000000', GradientType=0);
     /* IE6-9 */
+}
+
+.nav-back {
+    display: inline-block;
+    cursor: pointer;
+    color: white;
 }
 
 #logo {
@@ -440,15 +497,25 @@ nav ul ul ul li {
     position: fixed;
     top: 0;
     bottom: 0;
-    z-index: 5;
+    z-index: 101;
     text-align: right;
-    background: #ef4138;
+    /*background: #ef4138;*/
+    background: rgba(0, 0, 0, 0.85);
     overflow: auto;
     padding: 2.4rem 2.6rem;
     opacity: 0;
     visibility: hidden;
     -webkit-transition: all ease-in-out 0.5s;
     transition: all ease-in-out 0.5s;
+}
+
+.mobile-menu > div > i { /*//button /// */
+    visibility: visible;
+
+}
+
+.mobile-menu-overlay.transition.visible > div > i { /*//button X*/
+    visibility: visible;
 }
 
 .mobile-menu-content {
@@ -478,6 +545,41 @@ nav ul ul ul li {
     visibility: visible;
 }
 
+.hidden {
+    visibility: hidden;
+}
+
+/*  Menu hover effect - Effect 4: bottom border enlarge */
+.menu-link-item {
+    padding: 0 0 10px;
+}
+
+.menu-link-item::after {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    content: '';
+    opacity: 0;
+    -webkit-transition: height 0.3s, opacity 0.3s, -webkit-transform 0.3s;
+    -moz-transition: height 0.3s, opacity 0.3s, -moz-transform 0.3s;
+    transition: height 0.3s, opacity 0.3s, transform 0.3s;
+    -webkit-transform: translateY(-10px);
+    -moz-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+.menu-link-item:hover::after,
+.menu-link-item:focus::after {
+    height: 2px;
+    opacity: 1;
+    -webkit-transform: translateY(0px);
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+}
+
 /*-----------------------------------------------------------------------------------*/
 
 /*  05. PARALLAX
@@ -504,6 +606,14 @@ nav ul ul ul li {
     display: inline-block;
     width: 100%;
     margin: 5rem 0 0 0;
+}
+
+.aboutMeHeader {
+    background-image: url(../images/headers/about.jpg);
+}
+
+.contactMeHeader {
+    background-image: url(../images/headers/contact.jpg);
 }
 
 /*Border bottom parallax*/
@@ -617,16 +727,17 @@ nav ul ul ul li {
     position: absolute;
     top: 0;
     bottom: 0;
-    width: 0%;
+    width: 0;
     min-height: 80%;
     color: #fff;
     animation-delay: .8s;
 }
 
 /*Images home page version 1*/
-.section{
+.section {
     background-position: 80%;
 }
+
 #section1 {
     background-image: url(../images/home/home1.jpg);
 }
@@ -647,19 +758,19 @@ nav ul ul ul li {
 /*Images home page version 2*/
 
 #section1-v2 {
-    background-image: url(../images/home/home.jpg);
+    background-image: url(../images/home/home1.jpg);
 }
 
 #section2-v2 {
-    background-image: url(../images/home/home.jpg);
+    background-image: url(../images/home/home2.jpg);
 }
 
 #section3-v2 {
-    background-image: url(../images/home/home.jpg);
+    background-image: url(../images/home/home3.jpg);
 }
 
 #section4-v2 {
-    background-image: url(../images/home/home.jpg);
+    background-image: url(../images/home/home4.jpg);
 }
 
 .cover-titles {
@@ -731,7 +842,7 @@ nav ul ul ul li {
     font-size: 7rem;
     margin: 0;
     width: 100%;
-    letter-spacing: rem;
+    /*letter-spacing: rem;*/
     overflow: hidden;
     -webkit-text-shadow: 0 .3rem .9rem rgba(0, 0, 0, 0.4);
     text-shadow: 0 .3rem .9rem rgba(0, 0, 0, 0.4);
@@ -1172,7 +1283,6 @@ ul.comment-list {
 }
 
 .form-control {
-    box-shadow: none;
     border-radius: 0;
     border: solid .1rem #d9d9d9;
     -webkit-transition: all ease-in-out .2s;
@@ -1228,7 +1338,7 @@ textarea.form-control {
     }
 
     .align-left .title {
-        font-size: 86px;
+        font-size: 6rem;
     }
 
     .align-right .title {
@@ -1263,10 +1373,9 @@ textarea.form-control {
         opacity: 1;
     }
 
-    .header {
-        height: 20rem;
-    }
-
+    /*.header {*/
+    /*height: 20rem;*/
+    /*}*/
     .main-menu {
         padding: 0 3rem;
         margin: 2.5rem auto;
@@ -1460,7 +1569,7 @@ textarea.form-control {
 
     .align-left .title,
     .align-right .title {
-        font-size: 10vw;
+        font-size: 5vw;
         letter-spacing: 0;
         text-align: center;
     }
@@ -1496,6 +1605,10 @@ textarea.form-control {
 
 /*  13. GALLERYs
 /*-----------------------------------------------------------------------------------*/
+
+.gallery-header {
+    background-image: url(/images/headers/gallery.jpg);
+}
 
 .hovereffect {
     width: 100%;
@@ -1582,4 +1695,30 @@ textarea.form-control {
 /*-----------------------------------------------------------------------------------*/
 .pswp__caption__center {
     text-align: center !important;
+}
+
+/*-----------------------------------------------------------------------------------*/
+
+/*  15. 404 error page
+/*-----------------------------------------------------------------------------------*/
+
+.error404 {
+    background: url(/images/error404.jpg) no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.error404 h1 {
+    font-size: 3rem;
+}
+
+.error404 i {
+    font-size: 3em;
+    margin-bottom: 30px;
+}
+
+.error404 a {
+    margin-top: 30px;
 }

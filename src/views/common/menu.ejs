@@ -1,14 +1,25 @@
 <div class="main-menu">
-    <nav id="menu" class="col-md-10 col-sm-10">
+
+    <% if( typeof album != 'undefined') { %>
+    <a class="nav-back" href="/albums">
+        <i class="fa fa-angle-left fa-2x"></i>
+    </a>
+    <% } %>
+
+    <nav id="menu" class="col-md-10 col-sm-10 cl-effect-4">
         <ul class="hidden-xs">
             <% for (var i = 0; i < nav.length; i++) { %>
             <li>
                 <!--class="menu-active"-->
-                <a href="<%= nav[i].link %>"><%= nav[i].title %></a>
+                <div class="relative">
+                    <a class="menu-link-item" href="<%= nav[i].link %>"><%= nav[i].title %></a>
+                </div>
                 <% if(nav[i].subItems != undefined) { %>
                 <ul>
                     <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
-                    <li><a href="<%= nav[i].subItems[j].link %>"><%= nav[i].subItems[j].title %></a></li>
+                    <li>
+                        <a href="<%= nav[i].subItems[j].link %>"><%= nav[i].subItems[j].title %></a>
+                    </li>
                     <% } %>
                 </ul>
                 <% } %>

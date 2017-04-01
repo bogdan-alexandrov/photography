@@ -6,11 +6,13 @@
         <% for (var i = 0; i < nav.length; i++) { %>
         <li class="mobile-menu-item">
             <% if(nav[i].subItems != undefined) { %>
+
             <a class="dropdown" href="#"><%= nav[i].title %></a>
             <ul class="mobile-submenu">
                 <% for (var j = 0; j < nav[i].subItems.length; j++) { %>
                 <li><a href="<%= nav[i].subItems[j].link %>"><%= nav[i].subItems[j].title %></a></li>
                 <% } %>
+                <li><a href="/albums">All</a></li>
             </ul>
             <% } else { %>
             <a class="dropdown" href="<%= nav[i].link %>"><%= nav[i].title %></a>

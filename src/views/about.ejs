@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- include ./common/head.ejs %>
+    <!--SEO-->
+    <%- include common/head_commons.ejs %>
+
 </head>
 <body>
 
@@ -9,13 +11,12 @@
 <main class="container">
 
     <!-- Mobile Menu -->
-    <% var currentPage = 'about'; %>
     <%- include ./common/mobileMenu.ejs %>
     <!-- /Mobile Menu -->
 
     <!-- Header -->
     <header class="transition header">
-        <div class="parallax">
+        <div class="parallax aboutMeHeader">
             <div class="darker"></div>
         </div>
         <!-- Main menu -->
@@ -23,7 +24,6 @@
         <!-- /Main menu -->
         <div class="item-category">
             <h1>about</h1>
-            <p>There are many variations of passages of Lorem Ipsum available</p>
             <div class="border">
                 <div></div>
             </div>
@@ -40,39 +40,42 @@
                 <img src="/images/about-me.jpg" alt="Image description"/>
             </div>
             <div class="col-md6 col-sm-6 col-xs-12">
-                <h3>Photography name</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when
-                    looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal
-                    distribution of letters, as opposed to using 'Content here, content here', making it look like
-                    readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                    default model text, and a search for 'lorem ipsum' will uncover many web sites still in their
-                    infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose
-                    (injected humour and the like).
+                <h3>Bogdan Aleksandrov Photography</h3>
+                <p>
+                    Hi! My name is Bogdan Aleksandrov and I love photography. But you probably already knew that...
+                    Currently living in Paris, I work as a software developer.
+                    However, I am from Bulgaria <3 (very beautiful country, you should visit it !).
                 </p>
+                <p>
+                    A few words about me ... I love my family and friends, I like to travel ... Actually I made this
+                    site to share with you the way I see the world through my camera not to talk about myself. :)
+                </p>
+                <p>
+                    So if you want to send me a message, you can <a href="/contact">contact me</a> or
+                    just email me at aleksandrov.bogdan@gmail.com .
+                </p>
+                <p>
+                    That's all, folks. Have a nice visit! :)
+                </p>
+
             </div>
 
-            <!--
-                         Social Icons
-                        <div class="social-icons col-md12 col-sm-12 col-xs-12">
-                            <h3>find me on:</h3>
-                            <a href="#" class="btn facebook" style="color:" title="Facebook">
-                                <i class="fa fa-facebook-official fa-2x"></i>
-                            </a>
-                            <a href="#" class="btn px" style="color:" title="500px">
-                                <i class="fa fa-500px fa-2x"></i>
-                            </a>
-                            <a href="#" class="btn instagram" style="color:" title="Instagram">
-                                <i class="fa fa-instagram fa-2x"></i>
-                            </a>
-                        </div>
-                         /Social Icons
-            -->
-
+            <!--Social Icons-->
+            <div class="social-icons col-md12 col-sm-12 col-xs-12 text-center">
+                <h3>find me on:</h3>
+                <a href="https://www.facebook.com/baleksandrov" class="btn facebook" title="Facebook" target="_blank">
+                    <i class="fa fa-facebook-official fa-2x"></i>
+                </a>
+                <a href="https://500px.com/aleksandrovbogdan" class="btn px" title="500px" target="_blank">
+                    <i class="fa fa-500px fa-2x"></i>
+                </a>
+            </div>
+            <!--/Social Icons-->
         </div>
         <!-- /Row -->
 
         <!-- Footer -->
-        <%- include ./common/footer.ejs%>
+        <%- include ./common/footer.ejs %>
 
     </div>
     <!-- /Content -->
@@ -80,7 +83,11 @@
 <!-- /Container -->
 
 <!-- JS -->
-<%- include ./common/javascript.ejs%>
+<%- include ./common/javascript.ejs %>
+<!-- Plugins -->
+<script type="text/javascript" src="/js/website-smooth-scroll.min.js"></script>
+<!-- Main js -->
+<script type="text/javascript" src="/js/main.js"></script>
 
 </body>
 </html>

@@ -1,24 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <%- include ./common/head.ejs %>
 
-    <!--Facebook OG tags-->
-    <meta property="og:title" content="<%= title %>"/>
-    <meta property="og:type" content="website"/> <!--todo changeit for other pages -->
-    <meta property="og:url" content="https://bogi-photo.herokuapp.com/"/> <!--todo: parametrize it-->
-    <meta property="og:image" content="http://bogi-photo.herokuapp.com/images/home/home1.jpg"/>
-    <!--todo change it according to the page-->
-    <meta property="og:description" content="Welcome to my World of photography !">
+    <%- include common/head_commons.ejs %>
+    <!--CSS-->
+    <link rel="stylesheet" href="/css/jquery.fullPage.css">
 
-    <!--Twitter OG tags-->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="<%= title %>">
-    <meta name="twitter:description" content="Welcome to my World of photography !">
+    <!--<link rel="canonical" href="<%= process.env.SITE_DOMAIN %>/"/>-->
+    <meta name="description" content="Welcome to my Bogdan Alexandrov Photography. In my albums you will find Paris, black and white photos, cityscapes, animals ..."/>
+
+    <!--OG tags-->
+    <meta property="og:url" content="<%= process.env.SITE_DOMAIN %>"/>
+    <meta property="og:image" content="<%= process.env.SITE_DOMAIN %>/images/home/home1.jpg"/>
     <meta name="twitter:image" content="https://bogi-photo.herokuapp.com/images/home/home1.jpg">
-    <!--todo change it according to the page-->
-
-
+    <meta property="og:description" content="Welcome to my World of photography !">
+    <meta name="twitter:description" content="Welcome to my World of photography !">
+    <!-- /OG tags-->
 
 </head>
 <body>
@@ -35,7 +32,6 @@
         <!-- Menu -->
         <%- include ./common/menu.ejs %>
         <!-- /Menu -->
-        </div>
     </header>
     <!-- /Header -->
 
@@ -172,6 +168,10 @@
 
 <!-- JS -->
 <%- include ./common/javascript.ejs %>
+<!-- JS Plugins -->
+<script type="text/javascript" src="/js/jquery.fullPage.min.js"></script>
+<!-- Main js -->
+<script type="text/javascript" src="/js/main.js"></script>
 
 </body>
 </html>

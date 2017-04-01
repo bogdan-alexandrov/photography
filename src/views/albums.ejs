@@ -2,7 +2,24 @@
 <html>
 
 <head>
-    <%- include ./common/head.ejs %>
+    <!--SEO-->
+    <meta name="description"
+          content="Bogdan Alexandrov Photography albums - Paris, black and white photos, cityscapes, animals ..."/>
+    <%- include common/head_commons.ejs %>
+    <!--Plugins-->
+    <link rel="stylesheet" href="/css/photoswipe.min.css">
+    <link rel="stylesheet" href="/css/default-skin/default-skin.css">
+
+    <!--OG tags-->
+    <meta property="og:url" content="<%= process.env.SITE_DOMAIN + '/albums' %>">
+    <meta property="og:image" content="<%= process.env.SITE_DOMAIN + '/photos/headers/gallery.jpg' %>"/>
+    <meta name="twitter:image" content="<%= process.env.SITE_DOMAIN + '/photos/headers/gallery.jpg' %>"/>
+    <meta property="og:description" content="Albums - Bogdan Alexandrov Photography !">
+    <meta name="twitter:description" content="Albums - Bogdan Alexandrov Photography !">
+    <!-- /OG tags-->
+
+    <meta name="keywords" content="albums, gallery, galleries, photos"/>
+
 </head>
 
 <body>
@@ -14,15 +31,14 @@
     <!-- /Mobile Menu -->
     <!-- Header -->
     <header class="transition header">
-        <div class="parallax"
-             style="background-image: url(/images/headers/gallery.jpg);"        >
+        <div class="parallax gallery-header">
             <div class="darker"></div>
         </div>
         <!-- Main menu -->
         <%- include ./common/menu.ejs %>
         <!-- /Main menu -->
         <div class="item-category">
-            <h1>collections</h1>
+            <h1>gallery</h1>
             <p>My best photo albums</p>
             <div class="border">
                 <div></div>
@@ -37,11 +53,10 @@
             <!-- Grid Item-->
             <% for (var i = 0; i < albums.length; i++) { %>
             <div class="grid-item col-md-6 col-sm-6 col-xs-12">
-                <a href="/albums/<%= albums[i].name %>">
+                <a href="<%= process.env.SITE_DOMAIN %>/albums/<%= albums[i].name %>">
                     <div class="hovereffect">
-                        <img src="/images/photos/<%= albums[i].selectedImg %>_thumb.jpg"
-                             alt="<%= albums[i].name %>"
-                        />
+                        <img src="<%= process.env.SITE_DOMAIN %>/images/photos/<%= albums[i].selectedImg %>_thumb.jpg"
+                             class="justAdded" alt="<%= albums[i].subtitle %>"/>
                         <div class="overlay">
                             <h2><%= albums[i].title %></h2>
                             <p><%= albums[i].subtitle %></p>
@@ -106,7 +121,7 @@
         <!-- /Back to top button -->
 
         <!-- Footer -->
-        <%- include ./common/footer.ejs%>
+        <%- include ./common/footer.ejs %>
 
     </div>
     <!-- /Content -->
@@ -114,7 +129,14 @@
 <!-- /Container -->
 
 <!-- JS -->
-<%- include ./common/javascript.ejs%>
-</body>
+<%- include ./common/javascript.ejs %>
+<!-- Plugins-->
+<script type="text/javascript" src="/js/imagesloaded.min.js"></script>
+<script type="text/javascript" src="/js/masonry.​min.js"></script>
+<script type="text/javascript" src="/js/jquery-ias.min.js"></script>
+<script type="text/javascript" src="/js/website-smooth-scroll.min.js"></script>
+<!-- Main js -->
+<script type="text/javascript" src="/js/main.js"></script>
 
+</body>
 </html>
