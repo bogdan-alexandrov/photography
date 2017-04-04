@@ -1,6 +1,6 @@
 var mongodb = require('mongodb').MongoClient;
 
-var url = process.env.DATABASE;
+var url = process.env.MONGODB_URI;
 
 var albumService = function () {
 
