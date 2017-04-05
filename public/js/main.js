@@ -307,6 +307,17 @@ jQuery(function () {
                     // Pass data to PhotoSwipe and initialize it
                     gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
                     gallery.init();
+                    // Share link clicked
+                    gallery.listen('beforeChange', function(e, target) {
+                        alert('beforeChange!');
+                        // e - original click event
+                        // target - link that was clicked
+
+                        // If `target` has `href` attribute and
+                        // does not have `download` attribute -
+                        // share modal window will popup
+                    });
+
                 };
                 // loop through all gallery elements and bind events
                 var galleryElements = document.querySelectorAll(gallerySelector);
