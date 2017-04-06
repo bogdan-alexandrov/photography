@@ -13,13 +13,13 @@
     "express-minify": "^0.2.0",
     "memory-cache": "^0.1.6",
     "mongodb": "^2.2.24",
+    "dotenv": "^4.0.0",
     "sitemap": "^1.11.1"
   },
   "scripts": {
     "start": "node app.js"
   },
   "devDependencies": {
-    "dotenv": "^4.0.0",
     "gulp": "^3.9.1",
     "gulp-jscs": "^4.0.0",
     "gulp-jshint": "^2.0.4",
