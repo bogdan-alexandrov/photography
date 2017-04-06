@@ -24,7 +24,7 @@ if (cluster.isMaster) {
     var app = express();
 
     //REDIRECTS
-    app.use(force(process.env.SITE_DOMAIN_FULL));
+    app.use(force(process.env.SITE_DOMAIN));
 
 // BODY-PARSER
     app.use(bodyParser.urlencoded({extended: true}));
