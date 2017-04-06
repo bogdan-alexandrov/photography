@@ -26,7 +26,6 @@ if (cluster.isMaster) {
     //REDIRECTS
     app.use(forceDomain({
         hostname: process.env.SITE_DOMAIN,
-        port: port,
         protocol: 'https'
     }));
 
