@@ -8,7 +8,7 @@ var controller = function (albumService) {
 
     var sitemap = function (req, res) {
         var sitemapContent = sm.createSitemap({
-            hostname: process.env.SITE_DOMAIN,
+            hostname: process.env.SITE_DOMAIN_FULL,
             cacheTime: 600000      // 600 sec - cache purge period
         });
         sitemapContent.add({

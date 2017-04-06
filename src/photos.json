@@ -282,7 +282,7 @@
   {
     "title": "Eiffel ball",
     "subtitle": "Eiffel tower in crystal ball",
-    "name": "crystal-ball-eiffel-bnw",
+    "name": "crystall-ball-eiffel-bnw",
     "categories": "bnw, paris, crystal-ball",
     "keywords": "bnw, paris, eiffel tower, crystal ball",
     "size": "1200x798"
@@ -949,5 +949,13 @@
     "categories": "misc",
     "name": "wine",
     "size": "798x1200"
+  },
+  {
+    "title": "Sunset in Paris",
+    "subtitle": "Sunset on Pont Alexandre III",
+    "keywords": "paris, sunset, pont alexandre iii, magenta, tour eiffel",
+    "categories": "paris",
+    "name": "sunset-alex-mgnt",
+    "size": "1200x756"
   }
 ]
