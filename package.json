@@ -11,6 +11,7 @@
     "ejs": "^2.5.6",
     "emailjs": "^1.0.8",
     "express": "^4.13.3",
+    "express-force-domain": "0.0.6",
     "express-minify": "^0.2.0",
     "forcedomain": "^0.8.0",
     "memory-cache": "^0.1.6",
