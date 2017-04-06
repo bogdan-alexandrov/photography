@@ -165,11 +165,7 @@ blockquote {
 .fullscreen {
     height: 100vh;
 }
- .container.error404 {
-     position: fixed;
-     top: 0;
-     bottom: 0;
- }
+
 /*-----------------------------------------------------------------------------------*/
 
 /*  02. BUTTON

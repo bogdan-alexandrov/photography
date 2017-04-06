@@ -70,11 +70,6 @@ if (cluster.isMaster) {
     var seoRouter = require('./src/routes/seoRoutes.js')();
     var contactRouter = require('./src/routes/commonRoutes.js')(nav, mcache);
 
-    if (process.env.NODE_ENV !== 'production') {
-        var adminRouter = require('./src/routes/adminRoutes.js')(nav);
-        app.use('/admin', adminRouter);
-    }
-
     app.use('/albums', albumsRouter);
     app.use('/', seoRouter);
     app.use('/', contactRouter);
