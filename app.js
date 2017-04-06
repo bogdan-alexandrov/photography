@@ -10,7 +10,7 @@ var compression = require('compression');
 var express = require('express');
 var cluster = require('cluster');
 var minify = require('express-minify');
-var forceDomain = require('forcedomain');
+var force = require('express-force-domain');
 
 if (cluster.isMaster) {
     cluster.fork();
@@ -24,11 +24,7 @@ if (cluster.isMaster) {
     var app = express();
 
     //REDIRECTS
-    app.use(forceDomain({
-        hostname: process.env.SITE_DOMAIN,
-        port: port,
-        protocol: 'https'
-    }));
+    app.use(force(process.env.SITE_DOMAIN));
 
 // BODY-PARSER
     app.use(bodyParser.urlencoded({extended: true}));
