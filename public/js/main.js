@@ -15,7 +15,7 @@ jQuery(function () {
         /*Create 'exist' selector*/
         jQuery.exists = function (selector) {
             return ($(selector).length > 0);
-        }
+        };
         /*==============================*/
         /* 01 - Fullpage Slider */
         /*==============================*/
@@ -27,7 +27,7 @@ jQuery(function () {
                 fitToSection: true,
                 scrollBar: true,
                 scrollingSpeed: 700,
-                navigation: true,
+                navigation: true
             });
         }
         /*==============================*/
@@ -150,7 +150,7 @@ jQuery(function () {
         $back_to_top.on('click', function (event) {
             event.preventDefault();
             $('body,html').animate({
-                scrollTop: 0,
+                scrollTop: 0
             }, scroll_top_duration);
         });
         /*==============================*/
@@ -161,7 +161,7 @@ jQuery(function () {
                 // parse slide data (url, title, size ...) from DOM elements
                 // (children of gallerySelector)
                 var parseThumbnailElements = function (el) {
-                    var thumbElements = el.childNodes,
+                    var thumbElements = el.getElementsByTagName('figure'),
                         numNodes = thumbElements.length,
                         items = [],
                         figureEl, linkEl, size, item;
@@ -308,16 +308,19 @@ jQuery(function () {
                     gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
                     gallery.init();
                     // Share link clicked
-                    gallery.listen('beforeChange', function(e, target) {
-                        alert('beforeChange!');
-                        // e - original click event
-                        // target - link that was clicked
-
-                        // If `target` has `href` attribute and
-                        // does not have `download` attribute -
-                        // share modal window will popup
+                    gallery.listen('afterChange', function () {
+                        gallery.ui.update();
+                        if (gallery.getCurrentIndex() == (gallery.options.getNumItemsFn() - 2 )) {
+                            if (jQuery.ias().next()) {
+                                jQuery.ias().on('rendered', function () {
+                                    parseThumbnailElements(galleryElement).slice(gallery.items.length).forEach(function (element) {
+                                        gallery.items.push(element);
+                                    });
+                                    gallery.ui.update();
+                                });
+                            }
+                        }
                     });
-
                 };
                 // loop through all gallery elements and bind events
                 var galleryElements = document.querySelectorAll(gallerySelector);
@@ -344,22 +347,22 @@ jQuery(function () {
                     name: {
                         required: true,
                         minlength: 2,
-                        maxlength: 16,
+                        maxlength: 16
                     },
                     email: {
                         required: true,
-                        email: true,
+                        email: true
                     },
                     message: {
                         required: true,
-                        minlength: 16,
-                    },
+                        minlength: 16
+                    }
                 },
                 messages: {
                     name: {
                         required: "<i class='fa fa-times-circle'></i>Please enter your name",
                         minlength: "<i class='fa fa-times-circle'></i>Your name must consist of at least 2 characters",
-                        maxlength: "<i class='fa fa-times-circle'></i>The maximum number of characters - 16",
+                        maxlength: "<i class='fa fa-times-circle'></i>The maximum number of characters - 16"
                     },
                     email: {
                         required: "<i class='fa fa-times-circle'></i>Please enter your email",
