@@ -10,6 +10,7 @@ var compression = require('compression');
 var express = require('express');
 var cluster = require('cluster');
 var minify = require('express-minify');
+var forceDomain = require('forcedomain');
 
 if (cluster.isMaster) {
     cluster.fork();
@@ -19,7 +20,15 @@ if (cluster.isMaster) {
         cluster.fork();
     });
 } else {
+
     var app = express();
+
+    //REDIRECTS
+    app.use(forceDomain({
+        hostname: process.env.SITE_DOMAIN,
+        port: port,
+        protocol: 'https'
+    }));
 
 // BODY-PARSER
     app.use(bodyParser.urlencoded({extended: true}));
@@ -64,6 +73,11 @@ if (cluster.isMaster) {
     var albumsRouter = require('./src/routes/albumRoutes.js')(nav, mcache);
     var seoRouter = require('./src/routes/seoRoutes.js')();
     var contactRouter = require('./src/routes/commonRoutes.js')(nav, mcache);
+
+    if (process.env.NODE_ENV !== 'production') {
+        var adminRouter = require('./src/routes/adminRoutes.js')(nav);
+        app.use('/admin', adminRouter);
+    }
 
     app.use('/albums', albumsRouter);
     app.use('/', seoRouter);

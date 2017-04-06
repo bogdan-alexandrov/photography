@@ -7,13 +7,14 @@
   "dependencies": {
     "body-parser": "^1.17.0",
     "compression": "^1.6.2",
+    "dotenv": "^4.0.0",
     "ejs": "^2.5.6",
     "emailjs": "^1.0.8",
     "express": "^4.13.3",
     "express-minify": "^0.2.0",
+    "forcedomain": "^0.8.0",
     "memory-cache": "^0.1.6",
     "mongodb": "^2.2.24",
-    "dotenv": "^4.0.0",
     "sitemap": "^1.11.1"
   },
   "scripts": {
