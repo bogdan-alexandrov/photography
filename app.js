@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 var compression = require('compression');
 var express = require('express');
 var cluster = require('cluster');
+var minify = require('express-minify');
 
 if (cluster.isMaster) {
     cluster.fork();
@@ -25,6 +26,9 @@ if (cluster.isMaster) {
 
 // GZIP
     app.use(compression());
+
+// MINIFY
+    app.use(minify());
 
 // BROWSER CACHE
     app.use(function (req, res, next) {

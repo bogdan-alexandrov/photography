@@ -1712,6 +1712,9 @@ textarea.form-control {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
 .error404 h1 {
