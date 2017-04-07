@@ -321,6 +321,10 @@ jQuery(function () {
                             }
                         }
                     });
+                    gallery.listen('resize', function() {
+                        gallery.ui.update();
+                    });
+
                 };
                 // loop through all gallery elements and bind events
                 var galleryElements = document.querySelectorAll(gallerySelector);
@@ -393,4 +397,9 @@ jQuery(function () {
             });
         }
     });
+});
+$(window).bind("pageshow", function(event) {
+    if (event.originalEvent.persisted) {
+        window.location.reload()
+    }
 });
