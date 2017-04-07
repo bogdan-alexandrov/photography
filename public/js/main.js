@@ -12,7 +12,7 @@ jQuery(function () {
     'use strict';
     $(document).ready(function () {
         $('body, .contact_form, .contact-info, .btn').addClass('fadeIn animated');
-        /*Create 'exist' selector */
+        /*Create 'exist' selector*/
         jQuery.exists = function (selector) {
             return ($(selector).length > 0);
         };

@@ -10,6 +10,7 @@ var compression = require('compression');
 var express = require('express');
 var cluster = require('cluster');
 var minify = require('express-minify');
+var force = require('express-force-domain');
 
 if (cluster.isMaster) {
     cluster.fork();
@@ -19,7 +20,11 @@ if (cluster.isMaster) {
         cluster.fork();
     });
 } else {
+
     var app = express();
+
+    //REDIRECTS
+    app.use(force(process.env.SITE_DOMAIN));
 
 // BODY-PARSER
     app.use(bodyParser.urlencoded({extended: true}));
