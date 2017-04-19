@@ -23,7 +23,7 @@ if (cluster.isMaster) {
 
     var app = express();
 
-    //REDIRECTS
+//REDIRECTS
     app.use(force(process.env.SITE_DOMAIN));
 
 // BODY-PARSER

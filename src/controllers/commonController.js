@@ -4,7 +4,7 @@ var controller = function (nav, mcache) {
     var middleware = function (req, res, next) {
         var key = '__express__' + req.originalUrl || req.url;
         var cachedBody = mcache.get(key);
-        if (cachedBody) {
+        if (cachedBody && req.method == "GET") {
             res.send(cachedBody);
         } else {
             next();
